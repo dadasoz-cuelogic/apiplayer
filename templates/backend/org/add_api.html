@@ -82,7 +82,7 @@
                 <div class="panel-body">
                 
                 <!--LHS-->    
-                <div class="col-md-9 col-md-offset-1">
+                <div class="col-md-12">
                     
                   <div class="panel panel-inverse">
 
@@ -100,19 +100,25 @@
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Product Name:</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" placeholder="Default input" name="product-name">
+                                        <input type="text" class="form-control" placeholder="Product Name" name="product-name">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Product URL</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" placeholder="Disabled input" name="product-url">
+                                        <input type="text" class="form-control" placeholder="Product URL" name="product-url">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Product EndPoint</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" placeholder="Disabled input" name="product-url">
+                                        <input type="text" class="form-control" placeholder="Product EndPoint" name="product-endpoint">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Product Section</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" placeholder="Product Section" name="product-section">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -123,8 +129,6 @@
                                         </select>
                                     </div>
                                 </div>
-
-                                
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">API Status</label>
                                     <div class="col-md-9">
@@ -164,6 +168,7 @@
 {% block player_js %}
   <!-- ================== BEGIN PAGE LEVEL JS ================== -->
   <script src="{% static "backend/assets/js/dashboard.js" %}"></script>
+  <script src="{% static "backend/org/add_api.js" %}"></script>
   <!-- ================== END PAGE LEVEL JS ================== -->
   <script>
   $(document).ready(function() {
