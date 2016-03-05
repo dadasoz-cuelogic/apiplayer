@@ -21,6 +21,12 @@ def add_api(request):
 def endpoint(request):
     if request.method == "POST":
         name = request.POST.get('endpoint-name')
-
-        return HttpResponse("helloss")
+        return HttpResponse(name)
     return render(request, "backend/org/endpoint.html", {})
+
+
+def create_request(request):
+    if request.method == "POST":
+        name = request.POST
+        return HttpResponse(name)
+    return render(request, "backend/org/create_request.html", {})
