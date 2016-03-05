@@ -622,12 +622,12 @@ a.pop_win,
 a.auth_required,
 a.no_auth_required {
     display: inline-block;
-    background: transparent url(../img/doc.png) no-repeat 50% 50%;
+    background: transparent url(/static/apiplayer/images/doc.png) no-repeat 50% 50%;
     padding: 10px
 }
 
 a.pop_win_alternate {
-    background-image: url(../img/icon_docs_alternate.png);
+    background-image: url(/static/apiplayer/images/icon_docs_alternate.png);
     color: #3d3d3d
 }
 
@@ -636,11 +636,11 @@ a.pop_win_alternate:hover {
 }
 
 a.auth_required {
-    background-image: url(../img/icon_auth.png)
+    background-image: url(/static/apiplayer/images/icon_auth.png)
 }
 
 a.no_auth_required {
-    background-image: url(../img/no_auth_required.png)
+    background-image: url(/static/apiplayer/images/no_auth_required.png)
 }
 
 p {
@@ -1395,7 +1395,7 @@ form.controls {
 }
 
 #console_settings {
-    background: transparent url(../img/resourceform_back.png) 0 0
+    background: transparent url(/static/apiplayer/images/resourceform_back.png) 0 0
 }
 
 #console_settings a.embed_interface {
@@ -1412,7 +1412,7 @@ form.controls {
 }
 
 #console_settings a.branding_link {
-    background: transparent url(../img/logo_sprite.png) no-repeat 100% 0;
+    background: transparent url(/static/apiplayer/images/logo_sprite.png) no-repeat 100% 0;
     padding-right: 71px;
     margin-right: 16px
 }
@@ -1423,7 +1423,7 @@ form.controls {
 
 #console_settings a.js_toggleFull {
     display: block;
-    background: transparent url(../img/embiggen_sprite.png) no-repeat 0 0;
+    background: transparent url(/static/apiplayer/images/embiggen_sprite.png) no-repeat 0 0;
     height: 24px;
     width: 24px;
     margin: 8px 18px 0 -7px
@@ -1544,7 +1544,7 @@ form.controls div.input {
 }
 
 #embedBranding_holder {
-    background: transparent url(../img/poweredby_apigee_logo.png) no-repeat 50% 50%;
+    background: transparent url(/static/apiplayer/images/poweredby_apigee_logo.png) no-repeat 50% 50%;
     height: 47px;
     width: 125px;
     float: left
@@ -2870,7 +2870,7 @@ input[type=submit].btn::-moz-focus-inner {
 }
 
 .lozenge.no_auth {
-    background-image: url(../img/noauth_icon.png);
+    background-image: url(/static/apiplayer/images/noauth_icon.png);
     background-repeat: no-repeat;
     background-position: .5em 47%;
     text-align: right;
@@ -2880,7 +2880,7 @@ input[type=submit].btn::-moz-focus-inner {
 }
 
 .lozenge.auth_required {
-    background-image: url(../img/auth_icon.png);
+    background-image: url(/static/apiplayer/images/auth_icon.png);
     background-repeat: no-repeat;
     background-position: .5em 47%;
     text-align: right;
@@ -3091,74 +3091,74 @@ span.sub_link {
 
 .provider_icon {
     display: block;
-    background: transparent url(../img/twitter_logo.png) no-repeat 0 50%;
+    background: transparent url(/static/apiplayer/images/twitter_logo.png) no-repeat 0 50%;
     height: 75px;
     line-height: 75px;
     text-align: right
 }
 
 .provider_twitter {
-    background: transparent url(../img/twitter_logo.png) no-repeat 0 50%
+    background: transparent url(/static/apiplayer/images/twitter_logo.png) no-repeat 0 50%
 }
 
 .provider_etsy,
 .provider_etsy_sandbox {
-    background: transparent url(../img/etsy_logo.png) no-repeat 0 50%
+    background: transparent url(/static/apiplayer/images/etsy_logo.png) no-repeat 0 50%
 }
 
 .provider_facebook {
-    background: transparent url(../img/facebook_logo.png) no-repeat 0 50%
+    background: transparent url(/static/apiplayer/images/facebook_logo.png) no-repeat 0 50%
 }
 
 .provider_linkedin {
-    background: transparent url(../img/linkedin_logo.png) no-repeat 0 50%
+    background: transparent url(/static/apiplayer/images/linkedin_logo.png) no-repeat 0 50%
 }
 
 .provider_paypal {
-    background: transparent url(../img/paypal_logo.png) no-repeat 0 50%
+    background: transparent url(/static/apiplayer/images/paypal_logo.png) no-repeat 0 50%
 }
 
 .provider_salesforce,
 .provider_salesforcechatter {
-    background: transparent url(../img/salesforce_logo.png) no-repeat 0 50%
+    background: transparent url(/static/apiplayer/images/salesforce_logo.png) no-repeat 0 50%
 }
 
 .provider_simplegeo {
-    background: transparent url(../img/simplegeo_logo.png) no-repeat 0 50%
+    background: transparent url(/static/apiplayer/images/simplegeo_logo.png) no-repeat 0 50%
 }
 
 .provider_soundcloud,
 .provider_soundcloud_sandbox {
-    background: transparent url(../img/soundcloud_logo.png) no-repeat 0 50%
+    background: transparent url(/static/apiplayer/images/soundcloud_logo.png) no-repeat 0 50%
 }
 
 .provider_twilio {
-    background: transparent url(../img/twilio_logo.png) no-repeat 0 50%
+    background: transparent url(/static/apiplayer/images/twilio_logo.png) no-repeat 0 50%
 }
 
 .provider_foursquare {
-    background: transparent url(../img/foursquare_logo.png) no-repeat 0 50%
+    background: transparent url(/static/apiplayer/images/foursquare_logo.png) no-repeat 0 50%
 }
 
 .provider_github,
 .provider_githubv2 {
-    background: transparent url(../img/github_logo.jpg) no-repeat 0 50%
+    background: transparent url(/static/apiplayer/images/github_logo.jpg) no-repeat 0 50%
 }
 
 .provider_google-prediction {
-    background: transparent url(../img/googleprediction_logo.jpg) no-repeat 0 50%
+    background: transparent url(/static/apiplayer/images/googleprediction_logo.jpg) no-repeat 0 50%
 }
 
 .provider_instagram {
-    background: transparent url(../img/instagram_logo.jpg) no-repeat 0 50%
+    background: transparent url(/static/apiplayer/images/instagram_logo.jpg) no-repeat 0 50%
 }
 
 .provider_nytimes {
-    background: transparent url(../img/nyt_logo.jpg) no-repeat 0 50%
+    background: transparent url(/static/apiplayer/images/nyt_logo.jpg) no-repeat 0 50%
 }
 
 .provider_stackexchange {
-    background: transparent url(../img/stackexchange_logo.jpg) no-repeat 0 50%
+    background: transparent url(/static/apiplayer/images/stackexchange_logo.jpg) no-repeat 0 50%
 }
 
 .provider_icon a,
@@ -3404,13 +3404,13 @@ h2.collapsed_header span:after {
 }
 
 .code_viewer .collapse {
-    background: transparent url(../img/expanded.gif) no-repeat;
+    background: transparent url(/static/apiplayer/images/expanded.gif) no-repeat;
     cursor: pointer;
     cursor: hand
 }
 
 .code_viewer .expand {
-    background: transparent url(../img/collapsed.gif) no-repeat;
+    background: transparent url(/static/apiplayer/images/collapsed.gif) no-repeat;
     cursor: pointer;
     cursor: hand
 }
