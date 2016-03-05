@@ -1408,13 +1408,11 @@ form.controls {
 
 #console_settings a.embed_interface:hover {
     text-decoration: none;
-    color: #3c3c3c
 }
 
 #console_settings a.branding_link {
     background: transparent url(/static/apiplayer/images/logo_sprite.png) no-repeat 100% 0;
-    padding-right: 71px;
-    margin-right: 16px
+    padding-right: 22px;
 }
 
 #console_settings a.branding_link:hover {
@@ -1529,7 +1527,8 @@ form.controls div.input {
     float: none;
     display: block;
     line-height: 1.3em;
-    margin: 0 12px
+    margin: 0 12px;
+    color:#fff;
 }
 
 #console_settings div.input {
@@ -3570,7 +3569,7 @@ h2.collapsed_header span:after {
 }
 
 .alternate_content {
-    background-color: #ccd8e0;
+    /*background-color: #ccd8e0;*/
     border: 1px solid #bfbfbf;
     border-right: 0;
     margin-top: 10px;
@@ -3579,7 +3578,8 @@ h2.collapsed_header span:after {
     text-shadow: none;
     -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2)
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    background-color:#222;
 }
 
 .alternate_content h6 {
@@ -3695,20 +3695,11 @@ h2.collapsed_header span:after {
 #console_request {
     height: 79px;
     border-bottom: 1px solid #b6b6b6;
-    background-color: #b6bbb1;
-    background-repeat: repeat-x;
-    background-image: -khtml-gradient(linear, left top, left bottom, from(#fff), to(#b6bbb1));
-    background-image: -moz-linear-gradient(top, #fff, #b6bbb1);
-    background-image: -ms-linear-gradient(top, #fff, #b6bbb1);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(100%, #b6bbb1));
-    background-image: -webkit-linear-gradient(top, #fff, #b6bbb1);
-    background-image: -o-linear-gradient(top, #fff, #b6bbb1);
-    background-image: linear-gradient(top, #fff, #b6bbb1);
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#b6bbb1', GradientType=0);
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
     border-color: #b6bbb1 #b6bbb1 #909788;
     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    border-left: 30px solid #666
+    border-left: 30px solid #666;
+    background-image: none;
+    background-color: #00acac;
 }
 
 #console_request.primary {
