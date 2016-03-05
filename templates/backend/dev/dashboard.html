@@ -13,7 +13,7 @@
 
     <!-- begin breadcrumb -->
     <ol class="breadcrumb pull-right">
-        <li><a href="javascript:;">Home</a></li>
+        <li><a href="/">Home</a></li>
         <li class="active">Dashboard</li>
     </ol>
     <!-- end breadcrumb -->
@@ -30,7 +30,7 @@
         </div>
         <div class="col-md-9">
 
-            <div id="options" class="m-b-10">
+<!--             <div id="options" class="m-b-10">
                 <span class="gallery-option-set" id="filter" data-option-key="filter">
                     <a href="#show-all" class="btn btn-default btn-xs active" data-option-value="*">
                         Show All
@@ -48,34 +48,8 @@
                         Gallery Group 4
                     </a>
                 </span>
-            </div>
+            </div> -->
             <div id="gallery" class="gallery">
-                <div class="image gallery-group-1">
-                    <div class="image-inner">
-                        <a href="assets/img/gallery/gallery-1.jpg" data-lightbox="gallery-group-1">
-                            <img src="assets/img/gallery/gallery-1.jpg" alt="" />
-                        </a>
-                        <p class="image-caption">
-                            #1382 - 3D Arch
-                        </p>
-                    </div>
-                    <div class="image-info">
-                        <h5 class="title">Lorem ipsum dolor sit amet</h5>
-                        <div class="pull-right">
-                            <small>by</small> <a href="javascript:;">Sean Ngu</a>
-                        </div>
-                        <div class="rating">
-                            <span class="star active"></span>
-                            <span class="star active"></span>
-                            <span class="star active"></span>
-                            <span class="star"></span>
-                            <span class="star"></span>
-                        </div>
-                        <div class="desc">
-                            Nunc velit urna, aliquam at interdum sit amet, lacinia sit amet ligula. Quisque et erat eros. Aenean auctor metus in tortor placerat, non luctus justo blandit.
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         <!-- end #content -->
@@ -91,8 +65,7 @@
   <!-- ================== END PAGE LEVEL JS ================== -->
 
     <!-- ================== BEGIN PAGE LEVEL JS ================== -->
-    <script src="{% static "backend/assets/plugins/isotope/jquery.isotope.min.js" %}"></script>
-    <script src="{% static "backend/assets/plugins/lightbox/js/lightbox-2.6.min.js" %}"></script>
+
     <script src="{% static "backend/assets/js/gallery.demo.min.js" %}"></script>
     <script src="{% static "backend/assets/js/apps.min.js" %}"></script>
     <script src="{% static "backend/dev/js/list_categories.js" %}"></script>
@@ -101,7 +74,6 @@
   <script>
   $(document).ready(function() {
     App.init();
-    Gallery.init();
   });
   </script>
 {% endblock %}
