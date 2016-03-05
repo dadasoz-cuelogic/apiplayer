@@ -1,6 +1,6 @@
 from django.conf.urls import include, url
-from api import views
+from api import views as api_views
 
 urlpatterns = [
-
+    url(r'^player/', api_views.player, name="dashboard"),
 ]
