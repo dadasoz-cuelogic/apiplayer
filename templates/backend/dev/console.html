@@ -1,6 +1,12 @@
 {% extends "backend/base.html" %}
 {% load staticfiles %}
 
+<!-- begin #sidebar -->
+{% block left_sidebar %}
+  {% include "backend/dev/widgets/left-sidebar.html" %} 
+{% endblock %}
+<!-- end #sidebar -->
+
 {% block content %}
     
     <!-- begin breadcrumb -->
