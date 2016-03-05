@@ -141,7 +141,3 @@ MEDIA_ROOT = '/media/'
 # trailing slash.
 # Examples: "http://example.com/media/", "http://media.example.com/"
 MEDIA_URL = '/media/'
-
-
-# Django Abstract User
-AUTH_USER_MODEL = 'api_user.API_USER'

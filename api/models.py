@@ -30,5 +30,3 @@ class Apis(models.Model):
 
     # API request for method
     method = models.CharField(max_length=50)
-
-    
