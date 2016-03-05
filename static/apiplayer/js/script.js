@@ -40,6 +40,7 @@ $(document).ready(function(){
         $('.dropdown-menu-box').hide();
         $( "#token-model" ).dialog("close");
         $(".current_user").text("Custom Token");
+        $('form#authentication').addClass('submit_form');
     });
 
     $(".close-btn").click(function(){
@@ -47,7 +48,13 @@ $(document).ready(function(){
     });
  
 
-});
+    $('#send_button').on('click', function() {
+        var f = $('form.submit_form').serializeJSON();
+        console.log(f);
+        return false;
+    });
+
+}); // End of document ready
 
 
 var resourse_data = null;

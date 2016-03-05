@@ -661,8 +661,9 @@
         <section style="height: 651px;" id="console_inner_container">
             <!-- section start -->
             <section id="console_controls">
-                <form id="console_settings" class="controls clearfix">
-                    <a href="https://apiplayer.com/" class="branding_link embed_interface do_popup" style=""><span><img src="{% static '/static/frontend/assets/img/logo.png' %}"/></span></a>
+                <form id="console_settings" class="submit_form controls clearfix">
+                    <a href="https://apiplayer.com/" class="branding_link embed_interface do_popup" style="">powered by</a>
+
                     <div style="display: none;" id="providerChoice_holder" class="input_holder">
                         <label for="providerChoice">API</label>
                         <div class="input">
@@ -718,7 +719,7 @@
 
                 </form>
                 <div id="method_control"><span>▶</span></div>
-                <form id="console_request" class="controls form-stacked clearfix">
+                <form id="console_request" class="submit_form controls form-stacked clearfix">
                     <img style="left: 460px;" id="loading_animation" alt="loading animation" src="img/spinner4.gif">
                     <div class="clearfix">
                         <label for="request_bar" class="js_resource_bar">Request URL</label>
@@ -764,7 +765,7 @@
                     <li data-pk="request_body" id="body_tab"><a href="#" title=" ">Body</a></li>
                 </ul>
 
-                <form id="request_params" autocomplete="off" method="post" action="#" enctype="multipart/form-data" class="sub_form clearfix js_clearParent" style="display: none;">
+                <form id="request_params" autocomplete="off" method="post" action="#" enctype="multipart/form-data" class="submit_form sub_form clearfix js_clearParent" style="display: none;">
                     <table id="request_query">
                         <thead>
                             <tr>
@@ -839,6 +840,7 @@
         </div>
         <div class="modal-body">
             <div class="content">
+                <form id="authentication" autocomplete="off" method="post" action="#" class="">
                 <strong>Custom tokens, such as developer keys, will not be stored beyond the session.</strong>
                 <div class="clearfix custom">
                     <label for="txtNames0">Name:</label>
@@ -853,6 +855,7 @@
                     <input size="30" name="txtValues" id="txtValues0" class="xlarge jsCheckNull" value="00000000-0000-0000-0000-000000000000" type="text">
                     <p class="hide error_block">Value Required.</p></div>
                     </div>
+                </form>
          </div>
         </div>
         <div class="modal-footer">
@@ -866,5 +869,6 @@
     <link href="{% static 'apiplayer/plugins/jquery-ui/themes/base/jquery-ui.css' %}"></link>
     <script type="text/javascript" src="{% static 'apiplayer/js/jquery.cookie.js' %}"></script>
     <script type="text/javascript" src="{% static 'apiplayer/js/script.js' %}"></script>
+    <script src="{% static 'backend/assets/js/jquery.serialize-object.min.js' %}"></script>
 </body>
 </html>
