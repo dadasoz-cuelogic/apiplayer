@@ -6,13 +6,9 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse
 from product.models import Catagory, Product
 from django.views.decorators.csrf import csrf_exempt
-<<<<<<< HEAD
 from django.template import RequestContext
 from organization.models import Organization
 
-=======
-from organization.models import Organization
->>>>>>> origin/dev
 
 # Create your views here.
 
