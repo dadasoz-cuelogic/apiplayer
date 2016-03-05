@@ -7,6 +7,7 @@ $(document).ready(function(){
 
     $("#method_control").click(function(){
         $('#method_list_holder').show();
+        $("#method_toggle").addClass('method_toggle_rotate');
     });
 
     $("#request_tabs li").click(function(){
@@ -20,12 +21,29 @@ $(document).ready(function(){
     $( "#token-model" ).dialog({
       autoOpen: false,
       width:400,
-      height:500,
+      height:280,
       modal:true,
     });
 
     $("#customtoken").click(function(){
         $( "#token-model" ).dialog("open");
+        $('.dropdown-menu-box').hide();
+    });
+
+    $("#noauth").click(function(){
+        $(".current_user").text("No Auth");
+        $('.dropdown-menu-box').hide();
+    });
+    
+
+    $(".save-token").click(function(){
+        $('.dropdown-menu-box').hide();
+        $( "#token-model" ).dialog("close");
+        $(".current_user").text("Custom Token");
+    });
+
+    $(".close-btn").click(function(){
+        $( "#token-model" ).dialog("close");
     });
  
 
@@ -45,6 +63,11 @@ $(document).on('click', '.click_parent', function() {
         set_method(method_data);
 
     }, 500);
+});
+
+$(document).on('click', '.method_toggle_rotate', function() {
+    $(this).removeClass('method_toggle_rotate');
+    $('#method_list_holder').hide();
 });
 
 function set_method(data){
