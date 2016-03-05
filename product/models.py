@@ -5,6 +5,8 @@ from django.db import models
 from api_user.models import API_USER
 
 
+PRODUCT_TYPE = ((1, 'Private'), (2, 'Public'))
+
 class Catagory(models.Model):
     # Catagory name
     name = models.CharField(max_length=200)
@@ -48,8 +50,11 @@ class Product(models.Model):
     # Product Descritpion
     description = models.TextField()
 
+    # Product Type
+    product_type = models.IntegerField(choices=PRODUCT_TYPE, default=1)
+
     # Product Catagory
     catagory = models.ForeignKey(Catagory, on_delete=models.CASCADE, related_name='catagory')
 
-    # Product Owner 
+    # Product Owner
     organization = models.ForeignKey(API_USER, on_delete=models.CASCADE, related_name='organization')
