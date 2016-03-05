@@ -4,6 +4,8 @@ from django.db import models
 
 from product.models import Product
 
+from jsonfield import JSONField
+
 class EndPoint(models.Model):
     # Service name
     name = models.CharField(max_length=200)

@@ -1,6 +1,7 @@
 # Imports Error, and render as response
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, render
 from django.http import HttpResponse
+from api.models import EndPoint
 
 
 def dashboard(request):
@@ -12,3 +13,11 @@ def add_api(request):
         name = request.POST.get
         return HttpResponse("hello")
     return render_to_response("backend/org/add_api.html", {})
+
+
+def endpoint(request):
+    if request.method == "POST":
+        name = request.POST.get('endpoint-name')
+
+        return HttpResponse("helloss")
+    return render(request, "backend/org/endpoint.html", {})
