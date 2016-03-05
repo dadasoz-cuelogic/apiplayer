@@ -7,7 +7,7 @@ from django.template import RequestContext
 # Create your views here.
 
 
-def player(request):
+def player(request, product_key):
     product = Product.objects.get(pk=1)
     return render_to_response('player/player.html', {'product': product})
 

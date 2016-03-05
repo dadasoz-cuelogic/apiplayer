@@ -324,7 +324,8 @@ a#linkResourceEdit {
 }
 
 #console_settings {
-    border-top: 1px solid #cacaca
+    border-top: 1px solid #cacaca;
+    background: #242a30;
 }
 
 .alert-message.inline {

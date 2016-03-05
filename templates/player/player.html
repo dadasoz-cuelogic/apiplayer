@@ -642,6 +642,9 @@
     .ui-dialog-titlebar-close{
         display: none;
     }
+    .method_toggle_rotate{
+        transform: rotateY(180deg);
+    }
     </style>
 </head>
 
@@ -649,7 +652,7 @@
     <div class="snapshot_alert_container">
         <p></p>
     </div>
-    <div style="width: 1262px; background-image: none; padding: 0px; border-left: 1px solid rgb(205, 205, 205); border-right: 1px solid rgb(205, 205, 205); border-top: 1px solid rgb(205, 205, 205);" id="container">
+    <div style="width: 100%;box-sizing:100%;overflow:hidden; background-image: none; padding: 0px; border-left: 1px solid rgb(205, 205, 205); border-right: 1px solid rgb(205, 205, 205); border-top: 1px solid rgb(205, 205, 205);" id="container">
         <div style="left: 608px; display: none;" class="v1alert-message warning inline">
             <p>Working...</p>
         </div>
@@ -659,7 +662,7 @@
             <!-- section start -->
             <section id="console_controls">
                 <form id="console_settings" class="controls clearfix">
-                    <a href="https://apiplayer.com/" class="branding_link embed_interface do_popup" style="">powered by</a>
+                    <a href="https://apiplayer.com/" class="branding_link embed_interface do_popup" style=""><span><img src="{% static '/static/frontend/assets/img/logo.png' %}"/></span></a>
                     <div style="display: none;" id="providerChoice_holder" class="input_holder">
                         <label for="providerChoice">API</label>
                         <div class="input">
@@ -753,7 +756,7 @@
                     <p></p>
                 </div>
 
-                <a href="#" id="control_request_params" class="pulldown_control" title="toggle options">▼</a>
+                <a href="#" id="control_request_params" class="pulldown_control" title="toggle options" style="display:none;">▼</a>
 
                 <ul style="display: none;" class="tabs internal_tabs js_tabTarget_request_params" id="request_tabs">
                     <li class="active" data-pk="request_query" id="query_tab"><a href="#" title=" ">Query</a></li>
@@ -803,12 +806,12 @@
             </section>
 
             <!-- /console_controls -->
-            <section style="width: 1230px; display: block;" id="request_response_container" class="hide">
-                <section style="width: 615px; height: 551px;" id="request">
+            <section style="width: 100%; display: block; padding:0;margin:0; box-sizing: border-box;" id="request_response_container" class="hide">
+                <section style="width: 49%; border-right:2px solid #ccc; height: 551px;float:left;padding:0;margin:0" id="request">
                     <h4 style="padding-left: 15px; display: block;">Request
             <!-- <a href="javascript:void(0)" id="collapse_request">&#8592;</a> -->
         </h4>
-                    <ul id="expand_request" style="display: none; margin-top: -38px;">
+                    <ul id="expand_request" style="display: none; ">
                         <li class="first leftArrow"></li>
                     </ul>
                     <div style="width: 615px; height: 478px; display: block;" id="request_container">
@@ -816,8 +819,8 @@
                     </div>
                 </section>
                 <!-- /request -->
-                <section style="left: 615px; height: 551px; display: block;" id="drag_bar">&nbsp;</section>
-                <section style="width: 615px; height: 551px;" id="response">
+                <section style="left: 615px; height: 551px; display: block; display:none;" id="drag_bar">&nbsp;</section>
+                <section style="width: 49%;float:right;border-left:2px solid #ccc; height: 551px;" id="response">
                     <h4 style="">
                         Response
                         <a id="snapshot_button" href="javascript:void(0)" class="btn small disabled">Snapshot</a>

@@ -15,7 +15,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST, require_GET
-
+from django.core.urlresolvers import reverse
 from product.models import Catagory, Product
 from django.template import RequestContext
 
@@ -81,7 +81,8 @@ def get_all_products_in_category(request):
             'product_url': product.url,
             'product_description': product.description,
             'product_category': product.catagory.name,
-            'product_organization': product.organization.org_name
+            'product_organization': product.organization.org_name,
+            'product_api_player_url': "/dev/dev-api/{0}".format(product.product_key)
         }
         product_response.append(product_dict)
 
@@ -114,9 +115,20 @@ def get_all_products(request):
             'product_url': product.url,
             'product_description': product.description,
             'product_category': product.catagory.name,
-            'product_organization': product.organization.org_name
+            'product_organization': product.organization.org_name,
+            # TO DO no standard way known using manual
+            'product_api_player_url': "/dev/dev-api/{0}".format(product.product_key)
         }
         product_response.append(product_dict)
 
     return HttpResponse(json.dumps(product_response),
                         content_type='application/json')
+
+
+def dashboard_iframe(request, product_key):
+    """
+    Display the all categorires apis.
+
+    Render dashboard template.
+    """
+    return render_to_response('backend/dev/dashboard_iframe.html', {product_key: product_key})
