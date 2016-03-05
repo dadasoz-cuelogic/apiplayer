@@ -1,7 +1,6 @@
 from __future__ import unicode_literals
 from django.db import models
 from django.contrib.auth.models import User
-from api_user.models import API_USER
 
 def generate_filename(filename):
     url = "media/%s" % (filename)
@@ -21,4 +20,6 @@ class Developer(models.Model):
         auto_now=True, auto_now_add=False)
 
     # Prfile pic
-    profile_pic = models.FileField(upload_to=generate_filename)
+    profile_pic = models.FileField(upload_to=generate_filename, null=True)
+
+    user = models.ForeignKey(User, related_name='dev_user')

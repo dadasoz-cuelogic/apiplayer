@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-from api_user.models import API_USER
+from django.contrib.auth.models import User
 
 
 PRODUCT_TYPE = ((1, 'Private'), (2, 'Public'))
@@ -57,4 +57,4 @@ class Product(models.Model):
     catagory = models.ForeignKey(Catagory, on_delete=models.CASCADE, related_name='catagory')
 
     # Product Owner
-    organization = models.ForeignKey(API_USER, on_delete=models.CASCADE, related_name='organization')
+    organization = models.ForeignKey(User, on_delete=models.CASCADE, related_name='organization')

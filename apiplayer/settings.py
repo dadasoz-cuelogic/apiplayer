@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'developer',
     'reviews',
     'api_user',
+    'api',
 )
 
 MIDDLEWARE_CLASSES = (
