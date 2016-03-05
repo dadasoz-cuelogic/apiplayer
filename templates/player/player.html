@@ -6,6 +6,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>API Player</title>
+
+    <script type="text/javascript">
+        var product = '{{product.name}}';
+        var product_id = '{{product.id}}';
+    </script>
+
     <link rel="stylesheet" type="text/css" href="{% static 'apiplayer/css/global.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'apiplayer/css/console.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'apiplayer/css/api-custom.css' %}">
@@ -638,14 +644,13 @@
                     <div style="display: none;" id="providerChoice_holder" class="input_holder">
                         <label for="providerChoice">API</label>
                         <div class="input">
-                           
                         </div>
                     </div>
                     <div id="serviceChoice_holder" class="input_holder">
-                        <label for="serviceChoice">Service</label>
+                        <label for="end_point">End Point</label>
                         <div class="input">
-                            <select name="serviceChoice" id="serviceChoice">
-                                <option selected="selected" value="https://x.proctoru.com/api/">https://x.proctoru.com/api/</option>
+                            <select name="end_point" id="end_point">
+                                <option value="" selected="selected">Select</option>
                             </select>
                         </div>
                     </div>
@@ -687,8 +692,8 @@
                         <label for="currentUser">Authentication </label>
                         <div class="input">
                             <div class="btn-group">
-                                <button style="width: 117px;" class="btn btn first current_user">No Auth</button>
-                                <button id="oauth_dropdown" class="btn btn dropdown-toggle" data-toggle="dropdown">
+                                <button style="width: 117px;" class="btn btn first current_user" onclick="javascript:return false;">No Auth</button>
+                                <button id="oauth_dropdown" class="btn btn dropdown-toggle" data-toggle="dropdown" onclick="javascript:return false;">
                                     <span class="caret"></span></button>
                                 <div style="width: 150px; display: none;" class="dropdown-menu-box">
                                     <ul class="dropdown-menu fade-out fade-in">
@@ -859,7 +864,6 @@
                     <div style="width: 615px; height: 478px;" id="response_container"></div>
                 </section>
                 <!-- /response -->
-                <iframe src="blank.html" name="formHolder" id="formHolder" style="display: none;"></iframe>
             </section>
         </section>
 
@@ -879,6 +883,10 @@
         </div>
     </div>
     <div id="signin_overlay_shield"></div>
+    <script type="text/javascript" src="{% static 'apiplayer/plugins/jquery/jquery-1.9.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'apiplayer/plugins/jquery-ui/jquery-ui.min.js' %}"></script>
+    <link href="{% static 'apiplayer/plugins/jquery-ui/themes/base/jquery-ui.css' %}"></link>
+    <script type="text/javascript" src="{% static 'apiplayer/js/jquery.cookie.js' %}"></script>
+    <script type="text/javascript" src="{% static 'apiplayer/js/script.js' %}"></script>
 </body>
-
 </html>
