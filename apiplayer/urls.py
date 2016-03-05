@@ -11,7 +11,7 @@ urlpatterns = [
     url(r'^$', views.index, name="frontend"),
     url(r'^org/', include(organization_urls), name="organization"),
     url(r'^dev/', include(developer_urls), name="developer"),
-    url(r'^product/', include(product_urls), name="product"),
+    url(r'^product/', include(product_urls, namespace="product")),
     url(r'^api/', include(api_urls), name="api"),
     url(r'^reviews_urls/', include(reviews_urls), name="reviews"),
     url(r'^admin/', include(admin.site.urls)),
