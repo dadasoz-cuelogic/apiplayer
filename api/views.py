@@ -8,7 +8,7 @@ from product.models import Product
 
 def player(request):
     product = Product.objects.get(pk=1)
-    return render_to_response('player/player.html', {'product':product})
+    return render_to_response('player/player.html', {'product': product})
 
 
 def get_data(request):
@@ -20,11 +20,15 @@ def get_data(request):
             }],
             'resources': [{
                 'Auth': [{
+                    'section': 'Login and Authentication',
+                },
+
+                    {
                     'path': 'getInfo',
                     'method': {
                             'id': 1,
                             'name': 'GET',
-                            'Display Name': 'Get user info',
+                            'display_name': 'Get user info',
                             'params': [{
                                 "name": "time_sent",
                                 "required": True,
@@ -37,9 +41,9 @@ def get_data(request):
                     {
                     'path': 'Login',
                         'method': {
-                            'id': 1,
+                            'id': 2,
                             'name': 'POST',
-                            'Display Name': 'Login',
+                            'display_name': 'Login using this',
                             'params': [{
                                 "name": "username",
                                 "required": True,

@@ -623,6 +623,20 @@
     .ace-tm .ace_indent-guide {
         background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;
     }
+    html body .ui-dialog{
+        position: absolute !important;
+        height: auto !important;
+        width: 425px !important;
+        top: 80px !important;
+        left: 477px !important;
+        z-index: 999 !important;
+    }
+    #token-model{
+        width: 100% !important;
+    }
+    .ui-dialog-titlebar-close{
+        display: none;
+    }
     </style>
 </head>
 
@@ -727,10 +741,10 @@
                         </div>
                         <div class="input js_resource_bar" style="float: left;">
                             <select name="request_verb" id="request_verb" class="small">
-                                <option selected="selected" value="get">GET</option>
-                                <option value="post">POST</option>
-                                <option value="delete">DELETE</option>
-                                <option value="put">PUT</option>
+                                <option value="GET">GET</option>
+                                <option value="POST">POST</option>
+                                <option value="DELETE">DELETE</option>
+                                <option value="PUT">PUT</option>
                             </select>
                         </div>
 
@@ -749,10 +763,9 @@
                 <a href="#" id="control_request_params" class="pulldown_control" title="toggle options">▼</a>
 
                 <ul style="display: none;" class="tabs internal_tabs js_tabTarget_request_params" id="request_tabs">
-                    <li class="active"><a href="#" id="query_tab" title=" ">Query</a></li>
-                    <li><a href="#" id="template_tab" title=" ">Template</a></li>
-                    <li><a href="#" id="headers_tab" title=" ">Headers</a></li>
-                    <li><a href="#" id="body_tab" title=" ">Body</a></li>
+                    <li class="active" data-pk="request_query" id="query_tab"><a href="#" title=" ">Query</a></li>
+                    <li data-pk="request_headers"  id="headers_tab"><a href="#" title=" ">Headers</a></li>
+                    <li data-pk="request_body" id="body_tab"><a href="#" title=" ">Body</a></li>
                 </ul>
 
                 <form id="request_params" autocomplete="off" method="post" action="#" enctype="multipart/form-data" class="sub_form clearfix js_clearParent" style="display: none;">
@@ -766,19 +779,7 @@
                                 </th>
                             </tr>
                         </thead>
-                        <tbody id="request_query_body"></tbody>
-                    </table>
-                    <table id="request_template" style="display: none;">
-                        <thead>
-                            <tr>
-                                <th>Parameter</th>
-                                <th>Value</th>
-                                <th>
-                                    <span class="info"><sup class="sup_required">*</sup>Required</span> Description
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody id="request_template_body"></tbody>
+                        <tbody id="request_query_body" class="tbody_req"></tbody>
                     </table>
                     <table id="request_headers" style="display: none;">
                         <thead>
@@ -790,7 +791,7 @@
                                 </th>
                             </tr>
                         </thead>
-                        <tbody id="request_headers_body"></tbody>
+                        <tbody id="request_headers_body" class="tbody_req"></tbody>
                     </table>
                     <table id="request_body" style="display: none;">
                         <thead>
@@ -802,40 +803,7 @@
                                 </th>
                             </tr>
                         </thead>
-                        <tbody id="request_body_body">
-                        </tbody>
-                        <tbody id="request_body_alt_body">
-                            <tr class="js_inputField" style="display: none;">
-                                <td>
-                                    <input name="attachmentParamName" id="attachmentParamName" class="large" placeholder="file attachment" type="text">
-                                </td>
-                                <td style="white-space: nowrap">
-                                    <input id="attachment" name="attachment" class="xlarge js_clearLink" type="file">
-                                    <span class="js_clearInput" style="display: none;">
-              <a href="#" class="btn round">×</a>
-            </span>
-                                </td>
-                                <td id="file_attachment_doc" rowspan="3"></td>
-                            </tr>
-                            <tr class="js_inputField" style="display: none;">
-                                <td>Attachment Format</td>
-                                <td style="white-space: nowrap">
-                                    <select name="attachmentFormat" class="xlarge" id="attachmentFormat">
-                                        <option value="mime" selected="selected">MIME</option>
-                                        <option value="binary">Binary</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr class="js_inputField last_child" style="display: none;">
-                                <td>Content Disposition</td>
-                                <td style="white-space: nowrap">
-                                    <select name="attachmentContentDisposition" class="xlarge" id="attachmentContentDisposition">
-                                        <option value="form-data" selected="selected">form-data</option>
-                                        <option value="attachment">attachment</option>
-                                        <option value="inline">inline</option>
-                                    </select>
-                                </td>
-                            </tr>
+                        <tbody id="request_body_body" class="tbody_req">
                         </tbody>
                     </table>
                 </form>
@@ -868,7 +836,7 @@
         </section>
 
     </div>
-    <div class="modal">
+    <div class="modal" id="token-model" style="width: 400px !important;position: absolute;">
         <div class="modal-header">
             <h3></h3>
             <a class="close" href="javascript:void(0)">×</a>
