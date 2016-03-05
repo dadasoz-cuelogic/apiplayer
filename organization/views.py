@@ -9,6 +9,6 @@ def dashboard(request):
 
 def add_api(request):
     if request.method == "POST":
-        print request.POST
+        name = request.POST.get
         return HttpResponse("hello")
     return render_to_response("backend/org/add_api.html", {})
