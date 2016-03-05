@@ -24,6 +24,11 @@
     #request_response_container ul li.first.rightArrow:after {
         content: "▶"
     }
+
+    .method_toggle_rotate{
+        transform: rotateY(180deg);
+    }
+
     </style>
     <style id="ace_editor">
     .ace_editor {
@@ -827,15 +832,29 @@
     <div class="modal" id="token-model" style="width: 400px !important;position: absolute;">
         <div class="modal-header">
             <h3></h3>
-            <a class="close" href="javascript:void(0)">×</a>
+            <a class="close close-btn" href="javascript:void(0)">×</a>
         </div>
         <div class="modal-body">
             <div class="content">
-            </div>
+                <strong>Custom tokens, such as developer keys, will not be stored beyond the session.</strong>
+                <div class="clearfix custom">
+                    <label for="txtNames0">Name:</label>
+                    <div class="input">
+                    <input size="30" name="txtNames" id="txtNames0" class="xlarge jsCheckNull" value="Authorization-Token" type="text">
+                    <p class="hide error_block">Name Required.</p>
+                    </div>
+                    </div>
+                    <div class="clearfix custom">
+                    <label for="txtValues0">Value:</label>
+                    <div class="input">
+                    <input size="30" name="txtValues" id="txtValues0" class="xlarge jsCheckNull" value="00000000-0000-0000-0000-000000000000" type="text">
+                    <p class="hide error_block">Value Required.</p></div>
+                    </div>
+         </div>
         </div>
         <div class="modal-footer">
-            <a class="btn primary" href="javascript:void(0)">Ok</a>
-            <a class="btn secondary" href="javascript:void(0)">Cancel</a>
+            <a class="btn primary save-token" href="javascript:void(0)">Ok</a>
+            <a class="btn secondary close-btn" href="javascript:void(0)">Cancel</a>
         </div>
     </div>
     <div id="signin_overlay_shield"></div>
