@@ -1,0 +1,698 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+    <title>API Player</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <link rel="shortcut icon" type="image/x-icon" href="{% static "frontend/assets/img/favicon.ico" %}">
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="{% static "frontend/assets/plugins/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet" />
+    <link href="{% static "frontend/assets/plugins/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" />
+    <link href="{% static "frontend/assets/css/animate.min.css" %}" rel="stylesheet" />
+    <link href="{% static "frontend/assets/css/style.min.css" %}" rel="stylesheet" />
+    <link href="{% static "frontend/assets/css/style-responsive.min.css" %}" rel="stylesheet" />
+    <link href="{% static "frontend/assets/css/theme/default.css" %}" id="theme" rel="stylesheet" />
+    <!-- ================== END BASE CSS STYLE ================== -->
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="{% static "frontend/assets/plugins/pace/pace.min.js" %}"></script>
+    <!-- ================== END BASE JS ================== -->
+</head>
+
+<body data-spy="scroll" data-target="#header-navbar" data-offset="51">
+    <!-- begin #page-container -->
+    <div id="page-container" class="fade">
+        <!-- begin #header -->
+        <div id="header" class="header navbar navbar-transparent navbar-fixed-top">
+            <!-- begin container -->
+            <div class="container">
+                <!-- begin navbar-header -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="/">
+                        <!-- <span class="brand-logo"></span> -->
+                        <span class="main-logo"><img src="{% static "frontend/assets/img/logo.png" %}"/></span>
+                        <!-- <span class="brand-text">
+                            <span class="text-theme">Color</span> Admin
+                        </span> -->
+                    </a>
+                </div>
+                <!-- end navbar-header -->
+                <!-- begin navbar-collapse -->
+                <div class="collapse navbar-collapse" id="header-navbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="#home" data-click="scroll-to-target">HOME </a></li>
+                        <li><a href="#about" data-click="scroll-to-target">ABOUT</a></li>
+                        <li><a href="#team" data-click="scroll-to-target">TEAM</a></li>
+                        <li><a href="#features" data-click="scroll-to-target">FEATURES</a></li>
+                        <li><a href="#contact" data-click="scroll-to-target">CONTACT</a></li>
+                        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#loginModal">LOG IN</a></li>
+                        <li><a href="javascript:void(0)" data-toggle="modal" data-target="#signupModal">SIGN UP</a></li>
+                    </ul>
+                </div>
+                <!-- end navbar-collapse -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #header -->
+        <!-- begin #home -->
+        <div id="home" class="content has-bg home">
+            <!-- begin content-bg -->
+            <div class="content-bg">
+                <img src="{% static "frontend/assets/img/home-bg.jpg" %}" alt="Home" />
+            </div>
+            <!-- end content-bg -->
+            <!-- begin container -->
+            <div class="home-content">
+                <div class="col-md-6">
+                    <h1>API Player</h1>
+                    <h3>Unique place to get your Boilerplate API code for Free! </h3>
+                    <p class="color-white">
+                        Largest API Marketplace And Powerful Tools For Private And Public APIs.
+                        <br /> Please <a href="#">Log In / Register</a> to select your favorite theme color.
+                    </p>
+                    <a href="#" class="btn btn-theme" data-toggle="modal" data-target="#loginModal">Log In</a> <a href="#" class="btn btn-outline" data-toggle="modal" data-target="#signupModal">Sign Up</a>
+                </div>
+                <div class="col-md-6">
+                    <div class="banner-video">
+                        <video controls width="90%">
+                          <source src="{% static "frontend/assets/media/inspire.mp4" %}" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #home -->
+        <!-- begin #about -->
+        <div id="about" class="content" data-scrollview="true">
+            <!-- begin container -->
+            <div class="container" data-animation="true" data-animation-type="fadeInDown">
+                <h2 class="content-title">About Us</h2>
+                <p class="content-desc">
+                    We make it easy to inherit, integrate and deploy APIs. 
+                    <br />API Player is building a world-class place for cloud APIs, driven by a passionate team of dedicated developers.
+                </p>
+                <!-- begin row -->
+                <div class="row">
+                    <!-- begin col-4 -->
+                    <div class="col-md-6 col-sm-6">
+                        <!-- begin about -->
+                        <div class="about">
+                            <h3>Our Story</h3>
+                            <p>
+                                Our mission is to facilitate a new revolution in software production by serving as the backbone of the distribution and consumption of data and services through APIs.
+                            </p>
+                            
+                        </div>
+                        <!-- end about -->
+                    </div>
+                    <!-- end col-4 -->
+                    <!-- begin col-4 -->
+                    <div class="col-md-6 col-sm-6">
+                        <h3>Our Philosophy</h3>
+                        <!-- begin about-author -->
+                        <p>
+                                We believe in idea of Open Source contribution to programming world so that we can encourage worlwide business scope. As developers used to get boilerplate code without any headache, it will save the time as well as boost development process.
+                            </p>
+                        <!-- end about-author -->
+                    </div>
+                    <!-- end col-4 -->
+
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #about -->
+        <!-- begin #milestone -->
+        <div id="milestone" class="content bg-black-darker has-bg" data-scrollview="true">
+            <!-- begin content-bg -->
+            <div class="content-bg">
+                <img src="{% static "frontend/assets/img/milestone-bg.jpg" %}" alt="Milestone" />
+            </div>
+            <!-- end content-bg -->
+            <!-- begin container -->
+            <div class="container">
+                <!-- begin row -->
+                <div class="row">
+                    <!-- begin col-3 -->
+                    <div class="col-md-3 col-sm-3 milestone-col">
+                        <div class="milestone">
+                            <div class="number" data-animation="true" data-animation-type="number" data-final-number="10292">10,292</div>
+                            <div class="title">Total Site Views</div>
+                        </div>
+                    </div>
+                    <!-- end col-3 -->
+                    <!-- begin col-3 -->
+                    <div class="col-md-3 col-sm-3 milestone-col">
+                        <div class="milestone">
+                            <div class="number" data-animation="true" data-animation-type="number" data-final-number="9039">9,039</div>
+                            <div class="title">Registered Members</div>
+                        </div>
+                    </div>
+                    <!-- end col-3 -->
+                    <!-- begin col-3 -->
+                    <div class="col-md-3 col-sm-3 milestone-col">
+                        <div class="milestone">
+                            <div class="number" data-animation="true" data-animation-type="number" data-final-number="8291">8,291</div>
+                            <div class="title">People found it Useful</div>
+                        </div>
+                    </div>
+                    <!-- end col-3 -->
+                    <!-- begin col-3 -->
+                    <div class="col-md-3 col-sm-3 milestone-col">
+                        <div class="milestone">
+                            <div class="number" data-animation="true" data-animation-type="number" data-final-number="12937">12,937</div>
+                            <div class="title">Total APIs in Database</div>
+                        </div>
+                    </div>
+                    <!-- end col-3 -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #milestone -->
+        <!-- begin #team -->
+        <div id="team" class="content" data-scrollview="true">
+            <!-- begin container -->
+            <div class="container">
+                <h2 class="content-title">Our Team</h2>
+                <p class="content-desc">
+                    We are five members who are work 24x7 to make API Player perfect solution for development needs..!
+                    <br /> Our Team Includes:
+                </p>
+                <!-- begin row -->
+                <div class="row">
+                    <!-- begin col-4 -->
+                    <div class="col-md-4 col-sm-3">
+                        <!-- begin team -->
+                        <div class="team">
+                            <div class="image" data-animation="true" data-animation-type="flipInX">
+                                <img src="{% static "frontend/assets/img/user-3.jpg" %}" alt="Mia Donovan" />
+                            </div>
+                            <div class="info">
+                                <h4 class="name">Avadhut Sonawane</h4>
+                                <div class="title text-theme">Python Developer and SME</div>
+                                <p>Unique to find shortest path to solve a problem, stands out to work in challenging situation </p>
+                                <div class="social">
+                                    <a href="#"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
+                                    <a href="#"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus fa-lg fa-fw"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end team -->
+                    </div>
+                    <!-- end col-4 -->
+                    <!-- begin col-4 -->
+                    <div class="col-md-4 col-sm-3">
+                        <!-- begin team -->
+                        <div class="team">
+                            <div class="image" data-animation="true" data-animation-type="flipInX">
+                                <img src="{% static "frontend/assets/img/user-2.jpg" %}" alt="Jonny Cash" />
+                            </div>
+                            <div class="info">
+                                <h4 class="name">Sagar Bhamare</h4>
+                                <div class="title text-theme">Front End Developer and UI Expert</div>
+                                <p>Creative Mind and Artistic Visualization to make world Class Front End Application</p>
+                                <div class="social">
+                                    <a href="#"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
+                                    <a href="#"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus fa-lg fa-fw"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end team -->
+                    </div>
+                    <!-- end col-4 -->
+                    <!-- begin col-4 -->
+                    <div class="col-md-4 col-sm-3">
+                        <!-- begin team -->
+                        <div class="team">
+                            <div class="image" data-animation="true" data-animation-type="flipInX">
+                                <img src="{% static "frontend/assets/img/user-3.jpg" %}" alt="Mia Donovan" />
+                            </div>
+                            <div class="info">
+                                <h4 class="name">Vishal Mopari</h4>
+                                <div class="title text-theme">Python Developer and SME</div>
+                                <p>Can find Unique solution for problem in analytical way, appropriate load balancing</p>
+                                <div class="social">
+                                    <a href="#"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
+                                    <a href="#"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus fa-lg fa-fw"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end team -->
+                    </div>
+                    <!-- end col-4 -->
+
+                </div>
+                <!-- end row -->
+                <div class="clearfix">&nbsp;</div>
+                <!--row-->
+                <div class="row">
+                    <!-- begin col-4 -->
+                    <div class="col-md-6 col-sm-3">
+                        <!-- begin team -->
+                        <div class="team">
+                            <div class="image" data-animation="true" data-animation-type="flipInX">
+                                <img src="{% static "frontend/assets/img/user-3.jpg" %}" alt="Mia Donovan" />
+                            </div>
+                            <div class="info">
+                                <h4 class="name">Pranav Naxane</h4>
+                                <div class="title text-theme">Jr. Python Developer and SME</div>
+                                <p>Smart learner and abilty to force code to work. Can work with tight deadlines with positive outcome</p>
+                                <div class="social">
+                                    <a href="#"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
+                                    <a href="#"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus fa-lg fa-fw"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end team -->
+                    </div>
+                    <!-- end col-4 -->
+                    <!-- begin col-4 -->
+                    <div class="col-md-6 col-sm-3">
+                        <!-- begin team -->
+                        <div class="team">
+                            <div class="image" data-animation="true" data-animation-type="flipInX">
+                                <img src="{% static "frontend/assets/img/user-1.jpg" %}" alt="Ryan Teller" />
+                            </div>
+                            <div class="info">
+                                <h4 class="name">Dadaso Zanzane</h4>
+                                <div class="title text-theme">Sr. Software Engineer</div>
+                                <p>Hands on experience in Python</p>
+                                <div class="social">
+                                    <a href="#"><i class="fa fa-facebook fa-lg fa-fw"></i></a>
+                                    <a href="#"><i class="fa fa-twitter fa-lg fa-fw"></i></a>
+                                    <a href="#"><i class="fa fa-google-plus fa-lg fa-fw"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end team -->
+                    </div>
+                    <!-- end col-4 -->
+
+                </div>    
+                <!--end row-->
+
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #team -->
+        <!-- begin #quote -->
+        <div id="quote" class="content bg-black-darker has-bg" data-scrollview="true">
+            <!-- begin content-bg -->
+            <div class="content-bg">
+                <img src="{% static "frontend/assets/img/quote-bg.jpg" %}" alt="Quote" />
+            </div>
+            <!-- end content-bg -->
+            <!-- begin container -->
+            <div class="container" data-animation="true" data-animation-type="fadeInLeft">
+                <!-- begin row -->
+                <div class="row">
+                    <!-- begin col-12 -->
+                    <div class="col-md-12 quote">
+                        <i class="fa fa-quote-left"></i> When a wind of 'Change' blows.., some people build Walls... <br />while some people build Windmills..! <i class="fa fa-quote-right"></i>
+                    </div>
+                    <!-- end col-12 -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #quote -->
+        <!-- beign #service -->
+        <div id="features" class="content" data-scrollview="true">
+            <!-- begin container -->
+            <div class="container">
+                <h2 class="content-title">Our Features</h2>
+                <!-- begin row -->
+                <div class="row">
+                    <!-- begin col-4 -->
+                    <div class="col-md-4 col-sm-4">
+                        <div class="service">
+                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-cog"></i></div>
+                            <div class="info">
+                                <h4 class="title">Easy to Use</h4>
+                                <p class="desc">Our code is easy to use and integrate, your can simply copy paste the code into your app..!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col-4 -->
+                    <!-- begin col-4 -->
+                    <div class="col-md-4 col-sm-4">
+                        <div class="service">
+                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-paint-brush"></i></div>
+                            <div class="info">
+                                <h4 class="title">Clean & Robust</h4>
+                                <p class="desc">You dont have to doubt about wheather it will work or not because of any other complex requirements / inputs</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col-4 -->
+                    <!-- begin col-4 -->
+                    <div class="col-md-4 col-sm-4">
+                        <div class="service">
+                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-file"></i></div>
+                            <div class="info">
+                                <h4 class="title">Well Documented</h4>
+                                <p class="desc">Our code is readily well documented so that novoice coders also can easily inherit the same into their apps.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col-4 -->
+                </div>
+                <!-- end row -->
+                <!-- begin row -->
+                <div class="row">
+                    <!-- begin col-4 -->
+                    <div class="col-md-4 col-sm-4">
+                        <div class="service">
+                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-code"></i></div>
+                            <div class="info">
+                                <h4 class="title">Re-usable Code</h4>
+                                <p class="desc">We do believe in idea of open source code distribution, so you do not have to worry about liscensing, copyright etc.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col-4 -->
+                    <!-- begin col-4 -->
+                    <div class="col-md-4 col-sm-4">
+                        <div class="service">
+                            <div class="icon bg-theme" data-animation="true" data-animation-type="bounceIn"><i class="fa fa-heart"></i></div>
+                            <div class="info">
+                                <h4 class="title">Free Support</h4>
+                                <p class="desc">Just write  to us about your specific / complex code requirements, we will not charge a single penny for the same and will certainly help you to make your code work</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col-4 -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #about -->
+        <!-- beign #action-box -->
+        <div id="action-box" class="content has-bg" data-scrollview="true">
+            <!-- begin content-bg -->
+            <div class="content-bg">
+                <img src="{% static "frontend/assets/img/action-bg.jpg" %}" alt="Action" />
+            </div>
+            <!-- end content-bg -->
+            <!-- begin container -->
+            <div class="container" data-animation="true" data-animation-type="fadeInRight">
+                <!-- begin row -->
+                <div class="row action-box">
+                    <!-- begin col-9 -->
+                    <div class="col-md-9 col-sm-9">
+                        <div class="icon-large text-theme">
+                            <i class="fa fa-sign-in"></i>
+                        </div>
+                        <h3>LOG IN TO GET ACCESS TO YOUR API</h3>
+                        <p>
+                            You have to Log In / Sign Up in order get access to your code...!
+                        </p>
+                    </div>
+                    <!-- end col-9 -->
+                    <!-- begin col-3 -->
+                    <div class="col-md-3 col-sm-3">
+                        <a href="#" class="btn btn-outline btn-block" data-toggle="modal" data-target="#loginModal">Log In</a>
+                    </div>
+                    <!-- end col-3 -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #action-box -->
+
+        <!-- begin #contact -->
+        <div id="contact" class="content bg-silver-lighter" data-scrollview="true">
+            <!-- begin container -->
+            <div class="container">
+                <h2 class="content-title">Contact Us</h2>
+                <p class="content-desc">
+                    Your feedback is really important to us, for any suggestions, improvements and requirements
+                    <br /> you can reach us by filling a form below
+                </p>
+                <!-- begin row -->
+                <div class="row">
+                    <!-- begin col-6 -->
+                    <div class="col-md-6" data-animation="true" data-animation-type="fadeInLeft">
+                        <h3>Address:</h3>
+                        
+                        <p>
+                            <strong>API Player Inc.</strong>
+                            <br /> XXXX Asdfg ghj, Tttt 000
+                            <br /> India, MH XXXX
+                            <br /> P: (XXX) XXX-XXXX
+                            <br />
+                        </p>
+                        <p>
+                            <span class="phone">+91 (X) XXX XXX XX</span>
+                            <br />
+                            <a href="mailto:hello@emailaddress.com">apiplayer@xxx.com</a>
+                        </p>
+                    </div>
+                    <!-- end col-6 -->
+                    <!-- begin col-6 -->
+                    <div class="col-md-6 form-col" data-animation="true" data-animation-type="fadeInRight">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Name <span class="text-theme">*</span></label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Email <span class="text-theme">*</span></label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Message <span class="text-theme">*</span></label>
+                                <div class="col-md-9">
+                                    <textarea class="form-control" rows="10"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3"></label>
+                                <div class="col-md-9 text-left">
+                                    <button type="submit" class="btn btn-theme btn-block">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- end col-6 -->
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end #contact -->
+        <!-- begin #footer -->
+        <div id="footer" class="footer">
+            <div class="container">
+                <div class="footer-brand">
+                    <!-- <div class="footer-brand-logo"></div> -->
+                    <span class="main-logo"><img src="{% static "frontend/assets/img/logo.png" %}"/></span><br/>
+                </div>
+                <p>
+                    &copy; Copyright API Player 2016
+                    <br /> Created by <a href="#">Team API Player</a>
+                </p>
+                <p class="social-list">
+                    <a href="#"><i class="fa fa-facebook fa-fw"></i></a>
+                    <a href="#"><i class="fa fa-instagram fa-fw"></i></a>
+                    <a href="#"><i class="fa fa-twitter fa-fw"></i></a>
+                    <a href="#"><i class="fa fa-google-plus fa-fw"></i></a>
+                    <a href="#"><i class="fa fa-dribbble fa-fw"></i></a>
+                </p>
+            </div>
+        </div>
+        <!-- end #footer -->
+
+        <!--log in modal-->
+            <div class="modal fade login-modal custom-modal" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="Log In">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h2 class="modal-title text-theme" id="myModalLabel">Log In</h2>
+                    <p class="text-center">Welcome Back</p>
+                  </div>
+                  <div class="modal-body">
+                    
+                    <form class="form-horizontal">
+
+                      <div class="form-group">
+                        <label class="col-md-3">Login Type:</label>
+                       <label class="col-md-4">
+                            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">   Developer
+                            </label>
+                            <label class="col-md-4">
+                              <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> Organization
+                            </label>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                          <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                        <div class="col-sm-10">
+                          <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-5">
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox"> Remember me
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-sm-5">
+                          <div class="checkbox">
+                            <label class="pull-right text-theme">
+                               Forget Password
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                          <button type="submit" class="btn btn-theme" data-dismiss="modal">Log In</button>
+                        </div>
+                      </div>
+                    </form>
+
+                  </div>
+                  <div class="modal-footer">
+                    
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+        <!--end log in modal-->
+
+        <!--signup modal-->
+            <div class="modal fade signup-modal custom-modal" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="Log In">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h2 class="modal-title text-theme" id="myModalLabel">Sign Up</h2>
+                    
+                  </div>
+                  <div class="modal-body">
+                    
+                    <form class="form-horizontal">
+
+                        <div class="form-group">
+                        <label class="col-md-3">Signup Type:</label>
+                       <label class="col-md-4">
+                            <input type="radio" name="inlineRadioOptions" id="" value="option2">   Developer
+                            </label>
+                            <label class="col-md-4">
+                              <input type="radio" name="inlineRadioOptions" id="" value="option3"> Organization
+                            </label>
+                      </div>
+
+                      <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-3 control-label text-left">Email</label>
+                        <div class="col-sm-9">
+                          <input type="email" class="form-control" id="" placeholder="Email">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label text-left">Password</label>
+                        <div class="col-sm-9">
+                          <input type="password" class="form-control" id="" placeholder="Password">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label text-left">Confirm Password</label>
+                        <div class="col-sm-9">
+                          <input type="password" class="form-control" id="" placeholder="Retype Password">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-3 control-label text-left">Contact No.</label>
+                        <div class="col-sm-9">
+                          <input type="number" class="form-control" id="" placeholder="Contact No.">
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-9">
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox">I Accept T&amp;C
+                            </label>
+                          </div>
+                        </div>
+                        
+                      </div>
+
+                      <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-9">
+                          <button type="submit" class="btn btn-theme" data-dismiss="modal">Sign Up</button>
+                          <button type="submit" class="btn btn-theme" data-dismiss="modal">Cancel</button>
+                        </div>
+                      </div>  
+
+                    </form>
+
+                  </div>
+                  <div class="modal-footer">
+                    
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+        <!--end signup modal-->
+    </div>
+    <!-- end #page-container -->
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="{% static "frontend/assets/plugins/jquery/jquery-1.9.1.min.js" %}"></script>
+    <script src="{% static "frontend/assets/plugins/jquery/jquery-migrate-1.1.0.min.js" %}"></script>
+    <script src="{% static "frontend/assets/plugins/bootstrap/js/bootstrap.min.js" %}"></script>
+    <!--[if lt IE 9]>
+        <script src="{% static "frontend/assets/crossbrowserjs/html5shiv.js" %}"></script>
+        <script src="{% static "frontend/assets/crossbrowserjs/respond.min.js" %}"></script>
+        <script src="{% static "frontend/assets/crossbrowserjs/excanvas.min.js" %}"></script>
+    <![endif]-->
+    <script src="{% static "frontend/assets/plugins/jquery-cookie/jquery.cookie.js" %}"></script>
+    <script src="{% static "frontend/assets/plugins/scrollMonitor/scrollMonitor.js" %}"></script>
+    <script src="{% static "frontend/assets/js/apps.min.js" %}"></script>
+    <!-- ================== END BASE JS ================== -->
+    <script>
+    $(document).ready(function() {
+        App.init();
+    });
+    </script>
+</body>
+
+</html>
