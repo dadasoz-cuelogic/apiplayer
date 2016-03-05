@@ -1,0 +1,67 @@
+#signin_overlay_shield {
+    display: none;
+    color: red;
+    background-color: #000;
+    height: 100%;
+    left: 0;
+    opacity: .5;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 199999999
+}
+
+#signin_overlay_display {
+    display: none;
+    left: 539px;
+    margin: 155px 0 0;
+    padding: 13px 0 0;
+    position: absolute;
+    top: 0;
+    width: 500px;
+    height: 440px;
+    overflow: visible;
+    z-index: 999
+}
+
+#signin_overlay_display iframe {
+    border: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: relative
+}
+
+#signin_overlay_display a#close_modal {
+    background: url("../img/modal_closebutton.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    float: right;
+    height: 23px;
+    position: absolute;
+    top: 2px;
+    right: 0;
+    text-decoration: none;
+    width: 24px
+}
+
+#console_signup_prompt {
+    filter: alpha(opacity=100);
+    opacity: 1;
+    display: none
+}
+
+#provider_header span#provider_header_icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 12px 10px 0 0;
+    padding: 0;
+    -webkit-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2)
+}
+
+#provider_header h1 {
+    float: left;
+    margin-top: 18px
+}
