@@ -11,4 +11,4 @@ def add_api(request):
     if request.method == "POST":
         print request.POST
         return HttpResponse("hello")
-    return render_to_response("backend/org/add_api.html")
+    return render_to_response("backend/org/add_api.html", {})
