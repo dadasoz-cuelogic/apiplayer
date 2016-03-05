@@ -16,4 +16,4 @@ USER_TYPE = (
 class API_USER(models.Model):
 
     user = models.OneToOneField(User, default=1)
-    user_type = models.IntegerField(max_length=1, choices=USER_TYPE, default=3)
+    user_type = models.IntegerField(choices=USER_TYPE, default=3)

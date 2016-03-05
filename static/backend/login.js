@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    alert("CCCCC");
 });
 
 $(document).on('click', ".btn-login", function(){
@@ -13,8 +12,8 @@ $(document).on('click', ".btn-login", function(){
         if(data.user == "admin"){
             document.location = "/admin/"
         } else if(data.user == "dev"){
-            document.location = "/dev/"
-        } else if(data.message == "org"){
+            document.location = "/dev/dashboard/"
+        } else if(data.user == "org"){
             document.location = "/org/dashboard/"
         } else {
             document.location = "/"

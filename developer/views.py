@@ -17,6 +17,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST, require_GET
 
 from product.models import Catagory, Product
+from django.template import RequestContext
 
 
 def dashboard(request):
@@ -25,7 +26,7 @@ def dashboard(request):
 
     Render dashboard template.
     """
-    return render_to_response('backend/dev/dashboard.html', {})
+    return render_to_response('backend/dev/dashboard.html', {}, context_instance=RequestContext(request))
 
 
 @require_GET

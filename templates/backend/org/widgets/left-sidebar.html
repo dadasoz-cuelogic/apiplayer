@@ -17,15 +17,21 @@
         <!-- begin sidebar nav -->
         <ul class="nav">
           <li class="active">
-            <a href="/">
+            <a href="{% url 'organization:dashboard' %}">
               <i class="fa fa-desktop icon-color"></i>
               <span>Dashboard</span>
             </a>
-            <li class="">
-            <a href="{% url 'product:add_product' %}">
-              <i class="fa fa-desktop icon-color"></i>
-              <span>Add Product</span>
+
+          <li class="has-sub">
+            <a href="javascript:;">
+                <b class="caret pull-right"></b>
+                <i class="fa fa-align-left"></i> 
+                <span>Products</span>
             </a>
+            <ul class="sub-menu" style="display: block;">
+              <li><a href="{% url 'product:add_product' %}">Add Product</a></li>
+              <li><a href="{% url 'product:view_product' %}">View Products</a></li>
+            </ul>
           </li>
 
           <!-- begin sidebar minify button -->
