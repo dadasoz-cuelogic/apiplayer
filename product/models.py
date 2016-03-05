@@ -58,3 +58,6 @@ class Product(models.Model):
 
     # Product Owner
     organization = models.ForeignKey(Organization, on_delete=models.CASCADE, related_name='organization')
+
+    # Product_key
+    product_key = models.CharField(null=True, max_length=32, unique=True, db_index=True)
