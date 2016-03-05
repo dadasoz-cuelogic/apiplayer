@@ -1,11 +1,12 @@
 import json
+import uuid
 from django.shortcuts import render, render_to_response
 from django.contrib.auth.models import User
 # from django.core.serializers import serialize
 from django.http import HttpResponse
 from product.models import Catagory, Product
 from django.views.decorators.csrf import csrf_exempt
-
+from organization.models import Organization
 
 # Create your views here.
 
@@ -31,16 +32,19 @@ def add_product(request):
     if request.method == "POST":
 
         product_data = request.POST
+        product_key = uuid.uuid4().hex
+
         product = Product(name=product_data.get("productName",""),
                           url=product_data.get("productUrl",""),
                           is_active=True,
                           description=product_data.get("description", ""),
                           product_type=product_data.get("productType", 1),
                           catagory=Catagory.objects.get(pk=int(product_data.get("productCategory"))),
-                          organization=User.objects.get(pk=1))
+                          organization=Organization.objects.get(pk=1),
+                          product_key=product_key)
         try:
-            import pdb
-            pdb.set_trace()
+            # import pdb
+            # pdb.set_trace()
             product.save()
             return HttpResponse(json.dumps({"message":'success'}), content_type="application/json")
         except:

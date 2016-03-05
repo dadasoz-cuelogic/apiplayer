@@ -51,7 +51,7 @@ function render_product_gallery(product_list) {
             html = '';
             html += '<div class="image gallery-group-1 col-md-3">';
             html += '<div class="image-inner">';
-            html += '<a href="'+product.product_url+'" data-lightbox="gallery-group-1">';
+            html += '<a href="'+product.product_api_player_url+'" data-lightbox="gallery-group-1">';
             html += '<img src="/static/backend/assets/img/gallery/gallery-1.jpg" alt="" />';
             html += '</a>';
             html += '<p class="image-caption">';
