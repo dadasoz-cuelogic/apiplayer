@@ -9,6 +9,8 @@
 
     <link href="{% static "backend/assets/plugins/lightbox/css/lightbox.css" %}" rel="stylesheet" />
 
+    <link href="{% static "backend/dev/css/list_categories.css" %}" rel="stylesheet" />
+
     <!-- begin breadcrumb -->
     <ol class="breadcrumb pull-right">
         <li><a href="javascript:;">Home</a></li>
@@ -17,15 +19,16 @@
     <!-- end breadcrumb -->
 
     <!-- begin page-header -->
-    <h1 class="page-header">Dashboard <small>header small text goes here...</small></h1>
+    <h1 class="page-header">API's <small>search your api's here...</small></h1>
     <!-- end page-header -->
 
     <div class="row">
         <!-- begin col-6 -->
-        <div class="col-md-2">
-            List
+        <div class="col-md-3">
+            <ul class="custom-leftlist category-list">
+            </ul>
         </div>
-        <div class="col-md-10">
+        <div class="col-md-9">
 
             <div id="options" class="m-b-10">
                 <span class="gallery-option-set" id="filter" data-option-key="filter">
@@ -92,7 +95,7 @@
     <script src="{% static "backend/assets/plugins/lightbox/js/lightbox-2.6.min.js" %}"></script>
     <script src="{% static "backend/assets/js/gallery.demo.min.js" %}"></script>
     <script src="{% static "backend/assets/js/apps.min.js" %}"></script>
-    <script src="{% static "backend/dev/list_categories.js" %}"></script>
+    <script src="{% static "backend/dev/js/list_categories.js" %}"></script>
     <!-- ================== END PAGE LEVEL JS ================== -->
 
   <script>
