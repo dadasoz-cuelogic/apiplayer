@@ -47,8 +47,8 @@ def add_product(request):
                           organization=Organization.objects.get(pk=1),
                           product_key=product_key)
         try:
-            # import pdb
-            # pdb.set_trace()
+            import pdb
+            pdb.set_trace()
             product.save()
             return HttpResponse(json.dumps({"message": 'success'}), content_type="application/json")
         except:

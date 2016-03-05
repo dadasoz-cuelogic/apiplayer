@@ -9,14 +9,18 @@ $(document).on('click', ".btn-login", function(){
         "password" : password
     }
     $.post("/authenticate/", data, function(data){
-        if(data.user == "admin"){
-            document.location = "/admin/"
-        } else if(data.user == "dev"){
-            document.location = "/dev/dashboard/"
-        } else if(data.user == "org"){
-            document.location = "/org/dashboard/"
+        if(data.message == "success"){
+            if(data.user == "admin"){
+                document.location = "/admin/"
+            } else if(data.user == "dev"){
+                document.location = "/dev/dashboard/"
+            } else if(data.user == "org"){
+                document.location = "/org/dashboard/"
+            } else {
+                $.showNotification("failure", "Username or password is incorrect")
+            }
         } else {
-            document.location = "/"
+            $.showNotification("failure", "Username or password is incorrect")
         }
     })
 });
