@@ -686,7 +686,7 @@
 
                                 <div class="method_list_header">
                                     <label>Select an API method</label>
-                                    <input style="width: 420px; margin: 7px;" autocomplete="off" id="request_bar" name="request_bar" size="30" placeholder="Search methods..." type="text">
+                                    <input style="width: 420px; margin: 7px;" autocomplete="off" id="request_bar" name="endpoints[request_bar]" size="30" placeholder="Search methods..." type="text">
                                     <p class="faux-alert" style="display: none;">
                                         <span>No resource found</span>
                                     </p>
@@ -746,7 +746,7 @@
                         </div>
 
                         <div class="input js_resource_bar" style="position: relative; margin-left: 104px; margin-right: 126px">
-                            <input class="full" autocomplete="off" id="request_bar_1" name="request_bar_1" size="30" placeholder="← Select an API method" type="text">
+                            <input class="full" autocomplete="off" id="request_bar_1" name="endpoints[request_bar_1]" size="30" placeholder="← Select an API method" type="text">
                         </div>
 
                     </div>
@@ -788,7 +788,8 @@
                                 </th>
                             </tr>
                         </thead>
-                        <tbody id="request_headers_body" class="tbody_req"></tbody>
+                        <tbody id="request_headers_body" class="tbody_req">
+                        </tbody>
                     </table>
                     <table id="request_body" style="display: none;">
                         <thead>
@@ -845,14 +846,14 @@
                 <div class="clearfix custom">
                     <label for="txtNames0">Name:</label>
                     <div class="input">
-                    <input size="30" name="txtNames" id="txtNames0" class="xlarge jsCheckNull" value="Authorization-Token" type="text">
+                    <input size="30" name="endpoints[tokens][txtNames]" id="txtNames0" class="xlarge jsCheckNull" value="Authorization-Token" type="text">
                     <p class="hide error_block">Name Required.</p>
                     </div>
                     </div>
                     <div class="clearfix custom">
                     <label for="txtValues0">Value:</label>
                     <div class="input">
-                    <input size="30" name="txtValues" id="txtValues0" class="xlarge jsCheckNull" value="00000000-0000-0000-0000-000000000000" type="text">
+                    <input size="30" name="endpoints[tokens][txtValues]" id="txtValues0" class="xlarge jsCheckNull" value="00000000-0000-0000-0000-000000000000" type="text">
                     <p class="hide error_block">Value Required.</p></div>
                     </div>
                 </form>
