@@ -672,7 +672,7 @@
                     <div id="serviceChoice_holder" class="input_holder">
                         <label for="end_point">End Point</label>
                         <div class="input">
-                            <select name="end_point" id="end_point">
+                            <select name="endpoints[end_point]" id="end_point">
                                 <option value="" selected="selected">Select</option>
                             </select>
                         </div>
@@ -846,14 +846,14 @@
                 <div class="clearfix custom">
                     <label for="txtNames0">Name:</label>
                     <div class="input">
-                    <input size="30" name="endpoints[tokens][txtNames]" id="txtNames0" class="xlarge jsCheckNull" value="Authorization-Token" type="text">
+                    <input size="30" name="endpoints[request_header][txtNames]" id="txtNames0" class="xlarge jsCheckNull" value="Authorization-Token" type="text">
                     <p class="hide error_block">Name Required.</p>
                     </div>
                     </div>
                     <div class="clearfix custom">
                     <label for="txtValues0">Value:</label>
                     <div class="input">
-                    <input size="30" name="endpoints[tokens][txtValues]" id="txtValues0" class="xlarge jsCheckNull" value="00000000-0000-0000-0000-000000000000" type="text">
+                    <input size="30" name="endpoints[request_header][txtValues]" id="txtValues0" class="xlarge jsCheckNull" value="00000000-0000-0000-0000-000000000000" type="text">
                     <p class="hide error_block">Value Required.</p></div>
                     </div>
                 </form>
