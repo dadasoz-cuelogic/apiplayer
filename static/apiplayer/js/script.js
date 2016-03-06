@@ -10,6 +10,17 @@ $(document).ready(function(){
         $("#method_toggle").addClass('method_toggle_rotate');
     });
 
+    $("#end_point").change(function(){
+        $("#resource_holder").html("");
+        post_data = {
+            'end_point' : $("#end_point option:selected").val(),
+        }
+        $.post('/api/get-data/',post_data,function(data,status){
+            load_initial_data(data);
+            resourse_data = data;
+        });
+    });
+
     $("#request_tabs li").click(function(){
         $("#request_tabs li").removeClass('active');
         $(this).addClass("active");

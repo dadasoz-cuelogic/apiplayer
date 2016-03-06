@@ -105,6 +105,10 @@ $(document).ready(function(){
 		$("#frame-player").attr("src",url);
 	});
 
+	$("#embed-this").click(function(){
+		$("#embed-this-dialog").modal("show");
+	});
+
 }); //End of document ready
 
 

@@ -6,7 +6,7 @@ Implementation of dev views.
 # from django.shortcuts import render
 import json
 
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, render
 from django.http import HttpResponse
 from django.core.exceptions import ObjectDoesNotExist
 
@@ -133,4 +133,4 @@ def dashboard_iframe(request, product_key):
 
     Render dashboard template.
     """
-    return render_to_response('backend/dev/dashboard_iframe.html', {'product_key': product_key}, context_instance=RequestContext(request))
+    return render(request, 'backend/dev/dashboard_iframe.html', {'product_key': product_key})
