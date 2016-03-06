@@ -1,13 +1,6 @@
 {% extends "backend/base.html" %}
 {% load staticfiles %}
 
-<!-- begin #sidebar -->
-{% block left_sidebar %}
-  {% include "backend/dev/widgets/left-sidebar.html" %} 
-{% endblock %}
-<!-- end #sidebar -->
-
-
 {% block content %}
 
     <link href="{% static "backend/assets/plugins/isotope/isotope.css" %}" rel="stylesheet" />
@@ -31,33 +24,8 @@
 
     <div class="row">
         <!-- begin col-6 -->
-        <div class="col-md-3">
-            <ul class="custom-leftlist category-list">
-            </ul>
-        </div>
-        <div class="col-md-9">
-
-<!--             <div id="options" class="m-b-10">
-                <span class="gallery-option-set" id="filter" data-option-key="filter">
-                    <a href="#show-all" class="btn btn-default btn-xs active" data-option-value="*">
-                        Show All
-                    </a>
-                    <a href="#gallery-group-1" class="btn btn-default btn-xs" data-option-value=".gallery-group-1">
-                        Gallery Group 1
-                    </a>
-                    <a href="#gallery-group-2" class="btn btn-default btn-xs" data-option-value=".gallery-group-2">
-                        Gallery Group 2
-                    </a>
-                    <a href="#gallery-group-3" class="btn btn-default btn-xs" data-option-value=".gallery-group-3">
-                        Gallery Group 3
-                    </a>
-                    <a href="#gallery-group-4" class="btn btn-default btn-xs" data-option-value=".gallery-group-4">
-                        Gallery Group 4
-                    </a>
-                </span>
-            </div> -->
-            <div id="gallery" class="gallery">
-            </div>
+        <div class="col-md-12" style="width=100%; height=100%;">
+            <iframe src="/api/player/{{product_key}}" width="100%" height="600"></iframe>
         </div>
         <!-- end #content -->
         </div>

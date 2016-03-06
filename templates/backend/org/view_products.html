@@ -1,0 +1,72 @@
+{% extends "backend/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    
+    <!-- begin breadcrumb -->
+    <ol class="breadcrumb pull-right">
+        <li><a href="javascript:;">Products</a></li>
+        <li class="active">View</li>
+    </ol>
+    <!-- end breadcrumb -->
+
+    <!-- begin page-header -->
+    <h1 class="page-header">View Products</h1>
+    <!-- end page-header -->
+
+    <!-- begin row -->
+    <div class="row">
+        <!-- begin col-8 -->
+        <div class="col-md-12">
+            <div class="panel panel-inverse" data-sortable-id="index-1">
+
+                <div class="panel-body">
+                
+                <!--LHS-->    
+                <div class="col-md-12">
+                    <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Product Name</th>
+                                            <th>Description</th>
+                                            <th>Url</th>
+                                            <th>Player</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for product in products %}
+                                        <tr>
+                                            <td>{{product.id}}</td>
+                                            <td>{{product.name}}</td>
+                                            <td>{{product.description}}</td>
+                                            <td>{{product.url}}</td>
+                                            <td><a href="/product/edit/{{product.product_key}}/">Edit</a> / <a href="/api/player/{{product.product_key}}/">Player</a></td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                </div/ 
+                <!--end LHS-->
+                </div>
+            </div>
+        </div>
+        <!-- end col-8 -->
+    </div>
+{% endblock %}
+
+
+{% block player_js %}
+  <!-- ================== BEGIN PAGE LEVEL JS ================== -->
+  <script src="{% static "backend/assets/js/dashboard.js" %}"></script>
+  <script src="{% static "backend/org/add_api.js" %}"></script>
+  <!-- ================== END PAGE LEVEL JS ================== -->
+  <script>
+  $(document).ready(function() {
+    App.init();
+    Dashboard.init();
+  });
+  </script>
+{% endblock %}

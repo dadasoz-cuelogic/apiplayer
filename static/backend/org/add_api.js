@@ -1,7 +1,6 @@
 $(document).ready(function(){
 
 	$(document).on("click", '.save-product', function(){
-        alert("xx");
         data = {
             productName : $("#product-name").val(),
             productUrl : $("#product-url").val(),
@@ -13,7 +12,7 @@ $(document).ready(function(){
         }
 
         $.post("/product/add-product/", data, function(data,status){
-            console.log(data);
+            $.showNotification("Success", "product added");
         });
     });
 });
