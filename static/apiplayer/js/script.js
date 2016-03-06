@@ -40,6 +40,7 @@ $(document).ready(function(){
         $('.dropdown-menu-box').hide();
         $( "#token-model" ).dialog("close");
         $(".current_user").text("Custom Token");
+        $('form#authentication').addClass('submit_form');
     });
 
     $(".close-btn").click(function(){
@@ -47,7 +48,49 @@ $(document).ready(function(){
     });
  
 
-});
+    $('#send_button').on('click', function() {
+        var $inputs = $('.submit_form :input');
+        var f = $inputs.serializeJSON();
+        console.log(f);
+        // not sure if you wanted this, but I thought I'd add it.
+        // get an associative array of just the values.
+        // var values = {};
+        // $inputs.each(function() {
+        //     values[this.name] = $(this).val();
+        // });
+        // console.log(values);
+        return false;
+    });
+
+
+    $(document).on('click', '.add-post-query-header', function() {
+        var tbody_id = $(this).closest('tbody').attr('id');
+        tbody_id = $('#'+tbody_id);
+        var len = tbody_id.find('tr').length;
+        var $clone = tbody_id.find('tr:last').clone();
+        $clone.find('td input').val('');
+        $clone.find('td').each(function(i,v){
+            for(var i = 1; i <= $(v).find('input').length; i++) {
+                var name = $(v).find('input').attr('name').split('['+ parseInt(len - 1) +']')[1];
+                $(v).find('input').eq(0).attr('name', '[req]['+len+']'+name);
+            }
+        });
+        tbody_id.append($clone);
+        html = '<td class="required_element" style="white-space: nowrap;"><button type="button" class="btn btn-sm btn-success pull-right remove-post-query-header">Remove</button></td>';
+        if(len > 1 && len == 2) {
+            tbody_id.find('tr:last td:last').after(html);
+            tbody_id.find('tr:last td:last').remove();
+        } else if(len <= 1) {
+            tbody_id.find('tr:last td:last').remove();
+            tbody_id.find('tr:last td:last').after(html);
+        } 
+    });
+
+    $(document).on('click', '.remove-post-query-header', function() {
+        $(this).closest('tr').remove();
+    });
+
+}); // End of document ready
 
 
 var resourse_data = null;
@@ -59,7 +102,6 @@ $(document).on('click', '.click_parent', function() {
     get_method(method_id);
     $('#method_list_holder').hide();
     setTimeout(function(){ 
-        
         set_method(method_data);
 
     }, 500);
@@ -95,12 +137,19 @@ function set_method(data){
                 required_bool = "True";
             }
             html = '<tr class="js_tempField">';
-            html += '<td>time_sent'+param.name+required+'</td>';
+            html += '<td>endpoints['+param.name+required+']</td>';
             html += '<td class="required_element" style="white-space: nowrap;"><input class="xlarge" placeholder="'+param.default+'" id="'+param.name+'" name="'+param.name+'" value="" required="'+required_bool+'" type="text"></td>';
             html += '<td>'+param.doc+'</td>';
             html += '</tr>';
             $("#request_params").find("#request_query_body").append(html);
         });
+        html = '<tr class="js_tempField">';
+        html += '<td class="required_element" style="white-space: nowrap;"><input class="xlarge" placeholder="Parameter" id="" name="endpoints[req][0][query-parameter]" value="" type="text"></td>';
+        html += '<td class="required_element" style="white-space: nowrap;"><input class="xlarge" placeholder="Value" id="" name="endpoints[req][0][query-value]" value="" type="text"></td>';
+        html += '<td class="required_element" style="white-space: nowrap;"><input class="xlarge" placeholder="Description" id="" name="endpoints[req][0][query-description]" value="" type="text"></td>';
+        html += '<td class="required_element" style="white-space: nowrap;"><button type="button" class="btn btn-sm btn-success pull-right add-post-query-header">Add Row</button></td>';
+        html += '</tr>';
+        $("#request_params").find("#request_headers_body").append(html);
     }
     else{
         $("#request_params").find("table").hide();
@@ -118,11 +167,26 @@ function set_method(data){
             }
             html = '<tr class="js_tempField">';
             html += '<td>'+param.name+required+'</td>';
-            html += '<td class="required_element" style="white-space: nowrap;"><input class="xlarge" placeholder="'+param.default+'" id="'+param.name+'" name="'+param.name+'" value="" required="'+required_bool+'" type="text"></td>';
+            html += '<td class="required_element" style="white-space: nowrap;"><input class="xlarge" placeholder="'+param.default+'" id="'+param.name+'" name="endpoints['+param.name+']" value="" required="'+required_bool+'" type="text"></td>';
             html += '<td>'+param.doc+'</td>';
             html += '</tr>';
             $("#request_params").find("#request_body_body").append(html);
         });
+        html = '<tr class="js_tempField">';
+        html += '<td class="required_element" style="white-space: nowrap;"><input class="xlarge" placeholder="Parameter" id="" name="endpoints[req][0][query-parameter]" value="" type="text"></td>';
+        html += '<td class="required_element" style="white-space: nowrap;"><input class="xlarge" placeholder="Value" id="" name="endpoints[req][0][query-value]" value="" type="text"></td>';
+        html += '<td class="required_element" style="white-space: nowrap;"><input class="xlarge" placeholder="Description" id="" name="endpoints[req][0][query-description]" value="" type="text"></td>';
+        html += '<td class="required_element" style="white-space: nowrap;"><button type="button" class="btn btn-sm btn-success pull-right add-post-query-header">Add Row</button></td>';
+        html += '</tr>';
+        $("#request_params").find("#request_query_body").append(html);
+
+        html = '<tr class="js_tempField">';
+        html += '<td class="required_element" style="white-space: nowrap;"><input class="xlarge" placeholder="Parameter" id="" name="endpoints[req][0][header-parameter]" value="" type="text"></td>';
+        html += '<td class="required_element" style="white-space: nowrap;"><input class="xlarge" placeholder="Value" id="" name="endpoints[req][0][header-value]" value="" type="text"></td>';
+        html += '<td class="required_element" style="white-space: nowrap;"><input class="xlarge" placeholder="Description" id="" name="endpoints[req][0][header-description]" value="" type="text"></td>';
+        html += '<td class="required_element" style="white-space: nowrap;"><button type="button" class="btn btn-sm btn-success pull-right add-post-query-header">Add Row</button></td>';
+        html += '</tr>';
+        $("#request_params").find("#request_headers_body").append(html);
     }
 
 }

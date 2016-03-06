@@ -661,8 +661,9 @@
         <section style="height: 651px;" id="console_inner_container">
             <!-- section start -->
             <section id="console_controls">
-                <form id="console_settings" class="controls clearfix">
-                    <a href="https://apiplayer.com/" class="branding_link embed_interface do_popup" style=""><span><img src="{% static '/static/frontend/assets/img/logo.png' %}"/></span></a>
+                <form id="console_settings" class="submit_form controls clearfix">
+                    <a href="https://apiplayer.com/" class="branding_link embed_interface do_popup" style="">powered by</a>
+
                     <div style="display: none;" id="providerChoice_holder" class="input_holder">
                         <label for="providerChoice">API</label>
                         <div class="input">
@@ -685,7 +686,7 @@
 
                                 <div class="method_list_header">
                                     <label>Select an API method</label>
-                                    <input style="width: 420px; margin: 7px;" autocomplete="off" id="request_bar" name="request_bar" size="30" placeholder="Search methods..." type="text">
+                                    <input style="width: 420px; margin: 7px;" autocomplete="off" id="request_bar" name="endpoints[request_bar]" size="30" placeholder="Search methods..." type="text">
                                     <p class="faux-alert" style="display: none;">
                                         <span>No resource found</span>
                                     </p>
@@ -718,7 +719,7 @@
 
                 </form>
                 <div id="method_control"><span>▶</span></div>
-                <form id="console_request" class="controls form-stacked clearfix">
+                <form id="console_request" class="submit_form controls form-stacked clearfix">
                     <img style="left: 460px;" id="loading_animation" alt="loading animation" src="img/spinner4.gif">
                     <div class="clearfix">
                         <label for="request_bar" class="js_resource_bar">Request URL</label>
@@ -745,7 +746,7 @@
                         </div>
 
                         <div class="input js_resource_bar" style="position: relative; margin-left: 104px; margin-right: 126px">
-                            <input class="full" autocomplete="off" id="request_bar_1" name="request_bar_1" size="30" placeholder="← Select an API method" type="text">
+                            <input class="full" autocomplete="off" id="request_bar_1" name="endpoints[request_bar_1]" size="30" placeholder="← Select an API method" type="text">
                         </div>
 
                     </div>
@@ -764,7 +765,7 @@
                     <li data-pk="request_body" id="body_tab"><a href="#" title=" ">Body</a></li>
                 </ul>
 
-                <form id="request_params" autocomplete="off" method="post" action="#" enctype="multipart/form-data" class="sub_form clearfix js_clearParent" style="display: none;">
+                <form id="request_params" autocomplete="off" method="post" action="#" enctype="multipart/form-data" class="submit_form sub_form clearfix js_clearParent" style="display: none;">
                     <table id="request_query">
                         <thead>
                             <tr>
@@ -787,7 +788,8 @@
                                 </th>
                             </tr>
                         </thead>
-                        <tbody id="request_headers_body" class="tbody_req"></tbody>
+                        <tbody id="request_headers_body" class="tbody_req">
+                        </tbody>
                     </table>
                     <table id="request_body" style="display: none;">
                         <thead>
@@ -839,20 +841,22 @@
         </div>
         <div class="modal-body">
             <div class="content">
+                <form id="authentication" autocomplete="off" method="post" action="#" class="">
                 <strong>Custom tokens, such as developer keys, will not be stored beyond the session.</strong>
                 <div class="clearfix custom">
                     <label for="txtNames0">Name:</label>
                     <div class="input">
-                    <input size="30" name="txtNames" id="txtNames0" class="xlarge jsCheckNull" value="Authorization-Token" type="text">
+                    <input size="30" name="endpoints[tokens][txtNames]" id="txtNames0" class="xlarge jsCheckNull" value="Authorization-Token" type="text">
                     <p class="hide error_block">Name Required.</p>
                     </div>
                     </div>
                     <div class="clearfix custom">
                     <label for="txtValues0">Value:</label>
                     <div class="input">
-                    <input size="30" name="txtValues" id="txtValues0" class="xlarge jsCheckNull" value="00000000-0000-0000-0000-000000000000" type="text">
+                    <input size="30" name="endpoints[tokens][txtValues]" id="txtValues0" class="xlarge jsCheckNull" value="00000000-0000-0000-0000-000000000000" type="text">
                     <p class="hide error_block">Value Required.</p></div>
                     </div>
+                </form>
          </div>
         </div>
         <div class="modal-footer">
@@ -866,5 +870,6 @@
     <link href="{% static 'apiplayer/plugins/jquery-ui/themes/base/jquery-ui.css' %}"></link>
     <script type="text/javascript" src="{% static 'apiplayer/js/jquery.cookie.js' %}"></script>
     <script type="text/javascript" src="{% static 'apiplayer/js/script.js' %}"></script>
+    <script src="{% static 'backend/assets/js/jquery.serialize-object.min.js' %}"></script>
 </body>
 </html>
