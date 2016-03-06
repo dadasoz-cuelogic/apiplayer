@@ -150,6 +150,14 @@ function set_method(data){
         html += '<td class="required_element" style="white-space: nowrap;"><button type="button" class="btn btn-sm btn-success pull-right add-post-query-header">Add Row</button></td>';
         html += '</tr>';
         $("#request_params").find("#request_headers_body").append(html);
+
+        html = '<tr class="js_tempField">';
+        html += '<td class="required_element" style="white-space: nowrap;"><input class="xlarge" placeholder="Parameter" id="" name="endpoints[req][0][body-parameter]" value="" type="text"></td>';
+        html += '<td class="required_element" style="white-space: nowrap;"><input class="xlarge" placeholder="Value" id="" name="endpoints[req][0][body-value]" value="" type="text"></td>';
+        html += '<td class="required_element" style="white-space: nowrap;"><input class="xlarge" placeholder="Description" id="" name="endpoints[req][0][body-description]" value="" type="text"></td>';
+        html += '<td class="required_element" style="white-space: nowrap;"><button type="button" class="btn btn-sm btn-success pull-right add-post-query-header">Add Row</button></td>';
+        html += '</tr>';
+        $("#request_params").find("#request_body").append(html);
     }
     else{
         $("#request_params").find("table").hide();
