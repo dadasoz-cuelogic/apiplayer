@@ -50,8 +50,59 @@ $(document).ready(function(){
 
 
 	$('form#endpoint').on('submit', function(e) {
-		console.log($(this).serializeJSON());
+		form_data = {
+			'data' : $(this).serializeJSON(),
+			'end_point' : $("#api-end-points option:selected").attr("data-pk"),
+			'product_key' : $("#product-key").val(),
+			'section' : $("#api-sections option:selected").attr("data-pk"),
+		}
+
+		$.post("/product/api/add/",form_data,function(data,status){
+			if(data.message=="success"){
+				alert("data saved!");
+			}
+		});
 		return false;
+	});
+
+
+	$("#api-end-point-save").click(function(){
+		post_data = {
+			'end_point' : $("#api-end-point-input").val(),
+			'product_key' : $("#product-key").val(),
+		}
+		
+		$.post('/product/endpoint/add/',post_data,function(data,status){
+			if(data.message=="success"){
+				$("#api-end-point-input").val("");
+				$("#modal-dialog").modal("hide");
+				html = '<option value="'+data.end_point_name+'" data-pk="'+data.end_point_id+'">'+data.end_point_name+'</option>';
+				$("#api-end-points").append(html);
+			}
+		});
+	});
+
+	$("#api-section-save").click(function(){
+		post_data = {
+			'end_point' : $("#api-end-points option:selected").attr("data-pk"),
+			'product_key' : $("#product-key").val(),
+			'section': $("#api-section-input").val(),
+		}
+		
+		$.post('/product/section/add/',post_data,function(data,status){
+			if(data.message=="success"){
+				$("#api-section-input").val("");
+				$("#modal-section").modal("hide");
+				html = '<option value="'+data.section_name+'" data-pk="'+data.section_id+'">'+data.section_name+'</option>';
+				$("#api-sections").append(html);
+			}
+		});
+	});
+
+	$("#view-player").click(function(data,status){
+		$("#model-player-div").modal("show");
+		url = "/api/player/"+$("#product-key").val()+'/';
+		$("#frame-player").attr("src",url);
 	});
 
 }); //End of document ready

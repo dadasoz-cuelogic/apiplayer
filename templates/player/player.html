@@ -673,7 +673,9 @@
                         <label for="end_point">End Point</label>
                         <div class="input">
                             <select name="endpoints[end_point]" id="end_point">
-                                <option value="" selected="selected">Select</option>
+                                {% for endpoint in endpoints %}
+                                <option value="{{endpoint.name}}" data-pk="{{endpoint.id}}">{{endpoint.name}}</option>
+                                {% endfor %}
                             </select>
                         </div>
                     </div>

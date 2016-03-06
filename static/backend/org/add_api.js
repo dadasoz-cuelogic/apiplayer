@@ -5,14 +5,17 @@ $(document).ready(function(){
             productName : $("#product-name").val(),
             productUrl : $("#product-url").val(),
             productEndPoint : $("#product-endpoint").val(),
-            productSection : $("#product-section").val(),
             productCategory: $("#product-category").val(),
             apiStatus : $('input[name=is_active]:checked').val(),
+            api_visibility : $('input[name=visibility]:checked').val(),
             csrfmiddlewaretoken : $('#csrfmiddlewaretoken').val()
         }
-
-        $.post("/product/add-product/", data, function(data,status){
-            $.showNotification("Success", "product added");
+        $.post("/product/add/", data, function(data,status){
+            if(data.message=="success"){
+                document.location ="/product/edit/"+data.product_key+'/';
+            }else{
+                alert("error");
+            }
         });
     });
 });

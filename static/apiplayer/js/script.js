@@ -137,7 +137,8 @@ function set_method(data){
                 required_bool = "True";
             }
             html = '<tr class="js_tempField">';
-            html += '<td>endpoints['+param.name+required+']</td>';
+            html += '<td>'+param.name+required+'</td>';
+
             html += '<td class="required_element" style="white-space: nowrap;"><input class="xlarge" placeholder="'+param.default+'" id="'+param.name+'" name="'+param.name+'" value="" required="'+required_bool+'" type="text"></td>';
             html += '<td>'+param.doc+'</td>';
             html += '</tr>';
@@ -208,31 +209,29 @@ $.postJSON = function(url, data, callback) {
 
 function get_product_data(){
     post_data = {
-        'product_name' : product,
+        'end_point' : $("#end_point option:selected").val(),
     }
-    $.postJSON('/api/get-data/',post_data,function(data,status){
+    $.post('/api/get-data/',post_data,function(data,status){
         load_initial_data(data);
         resourse_data = data;
     });
 }
 
 function load_initial_data(data){
-    $("#end_point").html("");
     endpoints = data.endpoints
+    section_c = null;
+    api_sections = '';
     $.each(endpoints, function(index, endpoint) {
         auth_required = 'auth_required';
-        end_point_html = '<option value="'+endpoint.base+'">'+endpoint.base+'</option>';
-        $("#end_point").append(end_point_html);
         $.each(endpoint.resources, function(index, section) {
-            $.each(section, function(index, sub_section_all) {
-                api_sections = '<section class="js_activeMethod js_methodSection base_0">';                                        
-                $.each(sub_section_all, function(index, sub_section) {
-                    if(index==0){
-                        api_sections += '<strong>Create and Update Terms and Exams</strong><ul>';
-                    }else{
-                        method_name = sub_section.method.name;
-                        method_id = sub_section.method.id;
-                        display_name = sub_section.method.display_name;
+                        //if(section_c !=section.section){
+                            api_sections = '<section class="js_activeMethod js_methodSection base_0">'; 
+                            api_sections += '<strong>'+section.section+'</strong><ul>';
+                            section_c = section.section;
+                        //}
+                        method_name = section.method.name;
+                        method_id = section.id;
+                        display_name = section.method.display_name;
                         b_color = '';
                         if(method_name==="GET"){
                            b_color = 'blue'; 
@@ -247,15 +246,12 @@ function load_initial_data(data){
                         }
                         auth_required = auth_required + ' ' + b_color;
                         api_sections += '<li class="click_parent js_methodMatch" data-pk='+method_id+' onclick="return false;" style="clear: both;"><span class="lozenge left '+auth_required+'">'+method_name+'</span><a class="provider_method click_child" title="'+display_name+'" href="javascript:void(0);">'+display_name+'</a></li>';
-                    }
-                    if(index == sub_section_all.lenght+1){
-                        api_sections += '</ul></section>';
-                    }
+                        //if(section_c == section.section){
+                            api_sections += '</ul></section>';
+                        //}
+                        $("#resource_holder").append(api_sections);
                 });
-                $("#resource_holder").html(api_sections);
             });
-        });
-    });
 }
 
 
@@ -263,17 +259,11 @@ function get_method(id){
     endpoints = resourse_data.endpoints
     $.each(endpoints, function(index, endpoint) {
         $.each(endpoint.resources, function(index, section) {
-            $.each(section, function(index, sub_section_all) {
-                $.each(sub_section_all, function(index, sub_section) {
-                    if(index != 0){
-                        method_id = sub_section.method.id;
-                        if(method_id === id){
-                            method_data = sub_section;
-                            return;
-                        }
-                    }
-                });
-            });
+            method_id = section.id;
+            if(method_id === id){
+                method_data = section;
+                return;
+            }
         });
     });
 }
