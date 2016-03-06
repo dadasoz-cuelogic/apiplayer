@@ -13,7 +13,6 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
-@login_required(login_url="/")
 def player(request, product_key):
     data_dict = {}
     product = Product.objects.get(product_key=product_key)
@@ -22,7 +21,6 @@ def player(request, product_key):
 
 
 @csrf_exempt
-@login_required(login_url="/")
 def get_data(request):
     if request.method == "POST":
         end_point = request.POST.get('end_point')
