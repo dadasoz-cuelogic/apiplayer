@@ -18,3 +18,12 @@ vertical-align: sub;
 	padding:15px;
 	background:#ccc;
 }
+
+.horizontal-separator{
+    border-top: 2px solid #348fe2;
+    border-bottom: 2px solid #348fe2;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    padding: 10px 0px;
+    overflow: hidden;
+}
