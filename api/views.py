@@ -12,7 +12,7 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-
+@csrf_exempt
 def player(request, product_key):
     data_dict = {}
     product = Product.objects.get(product_key=product_key)
@@ -37,3 +37,12 @@ def get_data(request):
 
         return HttpResponse(json.dumps(data_dict),
                             content_type='application/json')
+
+
+@csrf_exempt
+def post_api(request):
+    data_dict = {}
+    if request.method == "POST":
+        data_dict = request.POST
+    return HttpResponse(json.dumps(data_dict),
+                        content_type='application/json')

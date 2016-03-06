@@ -61,15 +61,10 @@ $(document).ready(function(){
 
     $('#send_button').on('click', function() {
         var $inputs = $('.submit_form :input');
-        var f = $inputs.serializeJSON();
-        console.log(f);
-        // not sure if you wanted this, but I thought I'd add it.
-        // get an associative array of just the values.
-        // var values = {};
-        // $inputs.each(function() {
-        //     values[this.name] = $(this).val();
-        // });
-        // console.log(values);
+        var form_data = $inputs.serializeJSON();
+        $.post("/api/post/",{'form_data':form_data},function(data,status){
+            $("#response_container").html(JSON.stringify(data));
+        });
         return false;
     });
 
