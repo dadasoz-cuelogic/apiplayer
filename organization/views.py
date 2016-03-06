@@ -24,10 +24,3 @@ def endpoint(request):
         name = request.POST.get('endpoint-name')
         return HttpResponse(name)
     return render(request, "backend/org/endpoint.html", {}, context_instance=RequestContext(request))
-
-
-def create_request(request):
-    if request.method == "POST":
-        name = request.POST
-        return HttpResponse(name)
-    return render(request, "backend/org/create_request.html", {}, context_instance=RequestContext(request))

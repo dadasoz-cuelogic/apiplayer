@@ -20,7 +20,7 @@ class Section(models.Model):
 
     # Service as a parent
     # i.e AUTH -->Login,SignUp,ForgotPassword Api's
-    service = models.ForeignKey(EndPoint)
+    endpoint = models.ForeignKey(EndPoint)
 
     # Api URl
     name = models.CharField(max_length=200)
@@ -31,9 +31,6 @@ class Apis(models.Model):
     # Service as a parent
     # i.e AUTH -->Login,SignUp,ForgotPassword Api's
     section = models.ForeignKey(Section)
-
-    # Api URl
-    url = models.CharField(max_length=200)
 
     # Json data for table
     data = JSONField(null=True)

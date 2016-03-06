@@ -39,7 +39,8 @@ def get_all_categories(request):
     categories_list = []
 
     try:
-        categories_list = Catagory.objects.filter(is_active=True, is_deleted=False)
+        categories_list = Catagory.objects.filter(
+            is_active=True, is_deleted=False)
     except ObjectDoesNotExist:
         return HttpResponse(
             json.dumps({"Error": "object id not available"}),
@@ -66,7 +67,8 @@ def get_all_products_in_category(request):
     product_list = []
     catagory_name = request.GET.get('category', None)
     try:
-        product_list = Product.objects.filter(is_active=True, is_deleted=False, catagory__name=catagory_name)
+        product_list = Product.objects.filter(
+            is_active=True, is_deleted=False, catagory__name=catagory_name)
     except ObjectDoesNotExist:
         return HttpResponse(
             json.dumps({"Error": "object id not available"}),
@@ -131,4 +133,4 @@ def dashboard_iframe(request, product_key):
 
     Render dashboard template.
     """
-    return render_to_response('backend/dev/dashboard_iframe.html', {product_key: product_key})
+    return render_to_response('backend/dev/dashboard_iframe.html', {'product_key': product_key}, context_instance=RequestContext(request))
