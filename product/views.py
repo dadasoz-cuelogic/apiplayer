@@ -157,8 +157,3 @@ def dashboard_iframe(request, product_key):
     """
     return render_to_response('backend/org/dashboard_iframe.html', {product_key: product_key})
 
-
-@login_required(login_url="/")
-def edit_product(request, product_key):
-    product = Product.objects.get(product_key=product_key)
-    return render_to_response('backend/org/edit_product.html', {'product': product})
