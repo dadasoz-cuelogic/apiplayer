@@ -12,8 +12,10 @@ $(document).ready(function(){
 		$clone.find('td div input[type="checkbox"]').prop('checked', false);
 		var counter = $('.req-tbody').find('tr').length;
         $clone.find('td').each(function(){
-        	var $name = $(this).find('div input').attr('name').split('['+ parseInt(counter - 1) +']')[1];
-            $(this).find('div input').eq(0).attr('name', 'endpoints[resources][auth][method][params]['+counter+']'+$name);
+        	for(var i = 1; i <= $(this).find('div input').length; i++) {
+        		var $name = $(this).find('div input').attr('name').split('['+ parseInt(counter - 1) +']')[1];
+            	$(this).find('div input').eq(0).attr('name', 'endpoints[resources][auth][method][params]['+counter+']'+$name);
+        	}
         });
         $(".req-body tbody").append($clone);
 		check_tr_row();
@@ -27,8 +29,10 @@ $(document).ready(function(){
 		$clone.find('td div input').val('');
 		var counter = $('.auth-req-tbody').find('tr').length;
 		$clone.find('td').each(function(){
-            var $name = $(this).find('div input').attr('name').split('['+ parseInt(counter - 1) +']')[1];
-            $(this).find('div input').eq(0).attr('name', 'endpoints[header]['+counter+']'+$name);
+			for(var i = 1; i <= $(this).find('div input').length; i++) {
+				var $name = $(this).find('div input').attr('name').split('['+ parseInt(counter - 1) +']')[1];
+            	$(this).find('div input').eq(0).attr('name', 'endpoints[header]['+counter+']'+$name);
+			}
         });
 		$(".auth-req-body tbody").append($clone);
 		check_auth_header_row()
